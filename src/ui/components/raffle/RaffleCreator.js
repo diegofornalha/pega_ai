@@ -315,10 +315,10 @@ export default function RaffleCreator(props) {
       {/** title */}
       {showPreview ?
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          PREVIEW
+          PREVIA DO NFT SORTEIO
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          CREATE NFT RAFFLE
+          CRIAR NFT SORTEIO
         </h1>
       }
 

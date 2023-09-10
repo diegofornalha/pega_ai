@@ -20,31 +20,30 @@ export default function Landing(props) {
           <div className="flex flex-col gap-y-2">
             <div className={styles.landing}>
               <div className={styles.ltitle}>
-                <div className="underline text-black font-bold decoration-drizzle-green decoration-4">Airdrop,</div>
-                <div className="underline text-black font-bold decoration-drizzle-green decoration-4">Raffle,</div>
+                <div className="underline text-black font-bold decoration-drizzle-green decoration-4">Sorteio</div>
+                <div className="underline text-black font-bold decoration-drizzle-green decoration-4">Drops</div>
               </div>
             </div>
 
-            <label className={`-mt-1 font-flow text-black font-bold text-5xl sm:text-6xl`}>never been</label>
-            <label className={`font-flow text-black font-bold text-5xl sm:text-6xl`}>so easy</label>
+            <label className={`-mt-1 font-flow text-black font-bold text-5xl sm:text-6xl`}>nunca foi</label>
+            <label className={`font-flow text-black font-bold text-5xl sm:text-6xl`}>tão simples!</label>
           </div>
           <div className="flex flex-col">
             <label className={`-mt-5 font-flow text-gray-400 font-medium text-md`}>
-              Create a DROP or Raffle in one minute!
+              Crie um Sorteio em um minuto!
             </label>
             <a href="https://www.notion.so/lanford33/drizzle-d4713d571a944361a5fc80a915e01fc7"
               target="_blank"
               rel="noopener noreferrer"
             >
               <label className={`cursor-pointer font-flow text-drizzle-green font-medium text-md underline decoration-drizzle-green decoration-3`}>
-                Want to know more?
               </label>
             </a>
           </div>
 
           {props.user && props.user.loggedIn ?
             <div className="-mt-5 flex flex-col gap-y-2">
-              <label className="font-flow text-gray-400 font-medium text-md">Create a new:</label>
+              <label className="font-flow text-gray-400 font-medium text-md">Crie um novo sorteio de:</label>
               <div className="flex gap-x-2">
                 <button
                   type="button"
@@ -57,7 +56,7 @@ export default function Landing(props) {
                     router.push("/create/ft_drop")
                   }}
                 >
-                  {"DROP"}
+                  {"COIN"}
                 </button>
                 <button
                   type="button"
@@ -70,7 +69,7 @@ export default function Landing(props) {
                     router.push("/create/nft_raffle")
                   }}
                 >
-                  {"NFT Raffle"}
+                  {"NFT"}
                 </button>
               </div>
             </div> :
@@ -96,9 +95,6 @@ export default function Landing(props) {
         <a href={publicConfig.floatURL}
           target="_blank"
           rel="noopener noreferrer">
-          <div className="flex items-center rounded-full bg-drizzle-green-light px-3 py-1 text-xs sm:text-sm text-drizzle-green-dark">
-            <Image src="/float_logo.png" alt="" layout="intrinsic" width={20} height={20} objectFit="cover" />&nbsp;Eligibility checking with FLOAT is now available!
-          </div>
         </a>
       </div>
     </div>

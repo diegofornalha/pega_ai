@@ -195,7 +195,7 @@ export default function Account(props) {
               setShowRaffle(true)
             }}
           >
-            NFT Raffle
+            NFT SORTEIO
           </button>
         </div>
       </div>

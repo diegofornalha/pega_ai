@@ -47,7 +47,7 @@ export default function RaffleList(props) {
                   router.push("/create/nft_raffle")
                 }}
               >
-                New NFT Raffle
+                Novo Sorteio de NFT
               </button> : null
           }
         </div>
