@@ -22,15 +22,15 @@ const isClaimable = (claimStatus) => {
 // [Emoji, Description, Amount, Title]
 const parseClaimStatus = (user, claimStatus, tokenSymbol, isPreview, distributor) => {
   const elements = {
-    emoji: "🎉", description: "YOU ARE ELIGIBLE FOR", amount: `❓ FLOW`, title: "PREVIEWING"
+    emoji: "🎉", description: "VOCÊ ESTÁ ELEGÍVEL PARA", amount: `❓ FLOW`, title: "PREVIEWING"
   }
   if (isPreview) { return elements }
 
   if (!user || !user.loggedIn) {
     elements.emoji = "👀"
-    elements.description = "CONNECT WALLET TO CHECK ELIGIBILITY"
+    elements.description = "CONECTE A CARTEIRA PARA VERIFICAR A ELEGIBILIDADE"
     elements.amount = null
-    elements.title = "Connect Wallet"
+    elements.title = "Conectar carteira"
     return elements
   }
 

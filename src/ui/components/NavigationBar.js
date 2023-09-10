@@ -89,7 +89,7 @@ export default function NavigationBar(props) {
 
         <Link href="/">
           <label className="font-flow font-bold text-3xl">
-            drizzle
+            Pega Aí!
           </label>
         </Link>
         <label className="hidden sm:block px-1 text-center font-flow text-drizzle-green font-medium text-xs border border-1 border-drizzle-green">

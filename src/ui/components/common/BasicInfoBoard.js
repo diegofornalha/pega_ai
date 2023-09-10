@@ -40,14 +40,14 @@ export default function BasicInfoBoard(props) {
             <label className="block text-2xl font-bold font-flow">
               Banner
             </label>
-            <label className="block text-md font-flow leading-6 mt-2 mb-2">Banner size should not be larger than 500 KB. Compress it&nbsp;
+            <label className="block text-md font-flow leading-6 mt-2 mb-2">O tamanho do banner não deve ser superior a 500 KB. Comprimir&nbsp;
               <a href="https://tinypng.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline font-bold decoration-drizzle-green decoration-2"
               >
-                here
-              </a> if you need.</label>
+                AQUI
+              </a> se precisar.</label>
             <ImageSelector imageSelectedCallback={(_banner, _bannerSize) => {
               setBanner(_banner)
               setBannerSize(_bannerSize)
@@ -59,7 +59,7 @@ export default function BasicInfoBoard(props) {
         {/** name */}
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-            Name<span className="text-red-600">*</span>
+            Nome<span className="text-red-600">*</span>
           </label>
           <div className="mt-1">
             <input
@@ -81,7 +81,7 @@ export default function BasicInfoBoard(props) {
         {/** description */}
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-            Description
+          Descrição
           </label>
           <div className="mt-1">
             <textarea
@@ -103,7 +103,7 @@ export default function BasicInfoBoard(props) {
         {/** url */}
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-            Official Link
+          Link Oficial
           </label>
           <div className="mt-1">
             <input

@@ -348,7 +348,7 @@ export default function DropCreator(props) {
           PREVIEW
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          CREATE DROP
+          CRIAR SORTEIO DE COIN
         </h1>
       }
 
@@ -455,8 +455,8 @@ export default function DropCreator(props) {
         >
           {props.user.loggedIn ?
             (eligibilityMode ?
-              (!showPreview ? "PREVIEW" : "CREATE")
-              : "Select a mode") : "Connect Wallet"}
+              (!showPreview ? "VISUALIZAR" : "CRIAR")
+              : "Selecione um modo") : "Conectar carteira"}
         </button>
       </div>
       <CreatedModal open={showCreatedModal} setOpen={setShowCreatedModal} url={newDropURL} />

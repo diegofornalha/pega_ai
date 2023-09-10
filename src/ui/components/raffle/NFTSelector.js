@@ -47,8 +47,8 @@ export default function NFTSelector(props) {
       <label className="block text-2xl font-flow font-bold">NFT<span className="text-red-600">*</span></label>
       {
         user && user.loggedIn ?
-          <label className="block text-md font-flow leading-6 mt-2 mb-2">Select the NFT to add to the Raffle</label>
-          : <label className="block text-md font-flow leading-6 mt-2 mb-2">Connect wallet to select NFT</label>
+          <label className="block text-md font-flow leading-6 mt-2 mb-2">Selecione o NFT para adicionar ao sorteio</label>
+          : <label className="block text-md font-flow leading-6 mt-2 mb-2">Conecte a carteira para selecionar NFT</label>
       }
 
       <Combobox as="div" className={props.className} value={user && user.loggedIn && selectedNFT} onChange={async (nft) => {

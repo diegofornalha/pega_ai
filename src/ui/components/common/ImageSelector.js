@@ -35,7 +35,7 @@ export default function ImageSelector(props) {
       <label
         htmlFor="image-selector"
         className="w-full inline-block text-center leading-[48px] ">
-        Choose Image
+        Imagem ⬆
       </label>
       <input id="image-selector" className="hidden w-full" type="file"
         accept="image/png, image/jpeg"

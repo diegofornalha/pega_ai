@@ -29,9 +29,9 @@ const parseClaimStatus = (user, claimStatus, displayName, isPreview) => {
 
   if (!user || !user.loggedIn) {
     elements.emoji = "👀"
-    elements.description = "CONNECT WALLET TO CHECK ELIGIBILITY"
+    elements.description = "CONECTE A CARTEIRA PARA VERIFICAR A ELEGIBILIDADE"
     elements.amount = null
-    elements.title = "Connect Wallet"
+    elements.title = "Conectar carteira"
     return elements
   }
 

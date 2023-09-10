@@ -30,7 +30,7 @@ import { createRaffle } from '../../lib/mist-transactions'
 import RaffleStatsCard from './RaffleStatsCard'
 import RewardCard from './RewardCard'
 
-const NamePlaceholder = "RAFFLE NAME"
+const NamePlaceholder = "Nome do Sorteio"
 const DescriptionPlaceholder = "Detailed information about this RAFFLE"
 const HostPlaceholder = "0x0042"
 const CreatedAtPlaceholder = new Date('2020-08-01T08:16:16Z')
@@ -315,10 +315,10 @@ export default function RaffleCreator(props) {
       {/** title */}
       {showPreview ?
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          PREVIA DO NFT SORTEIO
+          PREVIA DO SORTEIO DE NFT 
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          CRIAR NFT SORTEIO
+          CRIAR SORTEIO DE NFT
         </h1>
       }
 
@@ -374,10 +374,10 @@ export default function RaffleCreator(props) {
 
         <div className="flex flex-col">
           <label className="text-2xl font-bold font-flow">
-            # of Winners<span className="text-red-600">*</span>
+          Nº de vencedores<span className="text-red-600">*</span>
           </label>
           <label className="block text-md font-flow leading-6 mt-2 mb-2">
-            The max number of winners to be drawn
+          O número máximo de vencedores a serem sorteados
           </label>
           <input
             type="number"
@@ -394,11 +394,10 @@ export default function RaffleCreator(props) {
 
         <div className="flex flex-col">
           <label className="text-2xl font-bold font-flow">
-            Registration Deadline{timezone ? ` (${timezone})` : ''}<span className="text-red-600">*</span>
+          Prazo de inscrição{timezone ? ` (${timezone})` : ''}<span className="text-red-600">*</span>
           </label>
           <label className="block text-md font-flow leading-6 mt-2 mb-2">
-            To be a candidate, eligible accounts should register before this date
-          </label>
+          Para ser candidato, as contas elegíveis devem se registrar antes desta data          </label>
           <input
             type="datetime-local"
             disabled={transactionInProgress}
@@ -410,7 +409,7 @@ export default function RaffleCreator(props) {
 
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-            Registration Eligibility<span className="text-red-600">*</span>
+          Elegibilidade de registro<span className="text-red-600">*</span>
           </label>
           <EligibilityModeSelector type="RAFFLE" mode={eligibilityMode} setMode={setEligibilityMode} />
         </div>
@@ -456,8 +455,8 @@ export default function RaffleCreator(props) {
         >
           {props.user.loggedIn ?
             (eligibilityMode ?
-              (!showPreview ? "PREVIEW" : "CREATE")
-              : "Select a mode") : "Connect Wallet"}
+              (!showPreview ? "VISUALIZAR" : "CRIAR")
+              : "Selecione um modo") : "Conectar carteira"}
         </button>
       </div>
       <CreatedModal type="Raffle" open={showCreatedModal} setOpen={setShowCreatedModal} url={newRaffleURL} />
