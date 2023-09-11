@@ -1,1 +1,3 @@
 src/ui/node_modules/
+# Local Netlify folder
+.netlify
