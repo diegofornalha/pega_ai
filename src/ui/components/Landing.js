@@ -8,6 +8,7 @@ import {
 } from "../lib/atoms"
 import publicConfig from "../publicConfig"
 import styles from "../styles/Landing.module.css"
+import Link from 'next/link';
 
 export default function Landing(props) {
   const router = useRouter()
@@ -84,73 +85,57 @@ export default function Landing(props) {
                 >
                   {"Gerenciar Histórico"}
                 </button>
-                <button
-                  type="button"
-                  disabled={transactionInProgress}
-                  className={classNames(
-                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
-                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
-                  )}
-                  onClick={() => {
-                    router.push("/create/compra_pix")
-                  }}
-                >
-                  {"Compre via PIX"}
-                </button>
 
-                <button
-                  type="button"
-                  disabled={transactionInProgress}
+                <a
+                  href="https://global.transak.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={classNames(
-                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
-                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
-                  )}
-                  onClick={() => {
-                    router.push("https://www.youtube.com/@DiegoFornalha/streams")
-                  }}
-                >
-                  {"Playlist Moedas"}
-                </button>
-                <button
-                  type="button"
+                  transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                  "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm")}
                   disabled={transactionInProgress}
+                  > Compre via PIX
+                </a>
+                <a
+                  href="https://www.youtube.com/@DiegoFornalha/streams"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={classNames(
-                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
-                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
-                  )}
-                  onClick={() => {
-                    router.push("https://www.youtube.com/@DiegoFornalha/streams")
-                  }}
-                >
-                  {"Playlist NFTs"}
-                </button>
-                <button
-                  type="button"
+                  transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                  "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm")}
                   disabled={transactionInProgress}
+                  > Playlist MOEDAS
+                </a>
+                <a
+                  href="https://www.youtube.com/@DiegoFornalha/streams"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={classNames(
-                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
-                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
-                  )}
-                  onClick={() => {
-                    router.push("https://app.increment.fi/swap?in=A.1654653399040a61.FlowToken&out=A.7bf07d719dcb8480.brasil")
-                  }}
-                >
-                  {"Trocar Flow/BR"}
-                </button>
-
-                <button
-                  type="button"
+                  transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                  "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm")}
                   disabled={transactionInProgress}
+                  > Playlist NFTs
+                </a>
+                <a
+                  href="https://app.increment.fi/swap?in=A.1654653399040a61.FlowToken&out=A.7bf07d719dcb8480.brasil"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={classNames(
-                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
-                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
-                  )}
-                  onClick={() => {
-                    router.push("https://app.increment.fi/swap?in=A.7bf07d719dcb8480.brasil&out=A.1654653399040a61.FlowToken")
-                  }}
-                >
-                  {"Trocar BR/Flow"}
-                </button>
+                  transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                  "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm")}
+                  disabled={transactionInProgress}
+                  > Trocar Flow/BR
+                </a>
+                <a
+                  href="https://app.increment.fi/swap?in=A.7bf07d719dcb8480.brasil&out=A.1654653399040a61.FlowToken"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={classNames(
+                  transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                  "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm")}
+                  disabled={transactionInProgress}
+                  > Trocar BR/Flow
+                </a>
               </div>
             </div> :
             <button
