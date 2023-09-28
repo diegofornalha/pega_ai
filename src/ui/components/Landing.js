@@ -56,7 +56,7 @@ export default function Landing(props) {
                     router.push("/create/ft_drop")
                   }}
                 >
-                  {"COIN"}
+                  {"Drop de MOEDAS"}
                 </button>
                 <button
                   type="button"
@@ -69,7 +69,7 @@ export default function Landing(props) {
                     router.push("/create/nft_raffle")
                   }}
                 >
-                  {"NFT"}
+                  {"Drop de NFTs"}
                 </button>
                 <button
                   type="button"
@@ -82,7 +82,7 @@ export default function Landing(props) {
                     router.push(`/${props.user.addr}`)
                   }}
                 >
-                  {"Perfil"}
+                  {"Gerenciar Histórico"}
                 </button>
                 <button
                   type="button"
@@ -96,6 +96,33 @@ export default function Landing(props) {
                   }}
                 >
                   {"Compre via PIX"}
+                </button>
+
+                <button
+                  type="button"
+                  disabled={transactionInProgress}
+                  className={classNames(
+                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
+                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
+                  )}
+                  onClick={() => {
+                    router.push("https://www.youtube.com/@DiegoFornalha/streams")
+                  }}
+                >
+                  {"Playlist Moedas"}
+                </button>
+                <button
+                  type="button"
+                  disabled={transactionInProgress}
+                  className={classNames(
+                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
+                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
+                  )}
+                  onClick={() => {
+                    router.push("https://www.youtube.com/@DiegoFornalha/streams")
+                  }}
+                >
+                  {"Playlist NFTs"}
                 </button>
               </div>
             </div> :
