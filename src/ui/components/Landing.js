@@ -71,6 +71,32 @@ export default function Landing(props) {
                 >
                   {"NFT"}
                 </button>
+                <button
+                  type="button"
+                  disabled={transactionInProgress}
+                  className={classNames(
+                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
+                  )}
+                  onClick={() => {
+                    router.push(`/${props.user.addr}`)
+                  }}
+                >
+                  {"Perfil"}
+                </button>
+                <button
+                  type="button"
+                  disabled={transactionInProgress}
+                  className={classNames(
+                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-drizzle-green hover:bg-drizzle-green-dark text-black",
+                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
+                  )}
+                  onClick={() => {
+                    router.push("/create/compra_pix")
+                  }}
+                >
+                  {"Compre via PIX"}
+                </button>
               </div>
             </div> :
             <button
