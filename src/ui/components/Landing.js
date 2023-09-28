@@ -124,6 +124,33 @@ export default function Landing(props) {
                 >
                   {"Playlist NFTs"}
                 </button>
+                <button
+                  type="button"
+                  disabled={transactionInProgress}
+                  className={classNames(
+                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
+                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
+                  )}
+                  onClick={() => {
+                    router.push("https://app.increment.fi/swap?in=A.1654653399040a61.FlowToken&out=A.7bf07d719dcb8480.brasil")
+                  }}
+                >
+                  {"Trocar Flow/BR"}
+                </button>
+
+                <button
+                  type="button"
+                  disabled={transactionInProgress}
+                  className={classNames(
+                    transactionInProgress ? "bg-drizzle-green-light text-gray-400" : "bg-blue-500 hover:bg-blue-600 text-white",
+                    "h-12 w-32 px-6 text-base rounded-2xl font-flow font-semibold shadow-sm"
+                  )}
+                  onClick={() => {
+                    router.push("https://app.increment.fi/swap?in=A.7bf07d719dcb8480.brasil&out=A.1654653399040a61.FlowToken")
+                  }}
+                >
+                  {"Trocar BR/Flow"}
+                </button>
               </div>
             </div> :
             <button
