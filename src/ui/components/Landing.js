@@ -30,7 +30,7 @@ export default function Landing(props) {
           </div>
           <div className="flex flex-col">
             <label className={`-mt-5 font-flow text-gray-400 font-medium text-md`}>
-              Crie um Sorteio em um minuto!
+              Crie um Sorteio, é tão fácil como mandar um PIX!
             </label>
             <a href="https://www.twitter.com/flowbrasilchain"
               target="_blank"
