@@ -43,7 +43,7 @@ export default function Landing(props) {
 
           {props.user && props.user.loggedIn ?
             <div className="-mt-5 flex flex-col gap-y-2">
-              <label className="font-flow text-gray-400 font-medium text-md">Crie um novo sorteio de:</label>
+              <label className="font-flow text-gray-400 font-medium text-md">Escolha uma opção no Menu abaixo:</label>
               <div className="flex gap-x-2">
                 <button
                   type="button"
