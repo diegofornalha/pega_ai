@@ -34,8 +34,8 @@ function MyApp({ Component, pageProps }) {
       <div className="bg-white text-black bg-[url('/bg.png')] bg-cover bg-center min-h-screen">
         <RecoilRoot>
           <Head>
-            <title>FlowPix.com.br | Compre e distribua Tokens</title>
-            <meta property="og:title" content="drizzle | token distribution tool" key="title" />
+            <title>FlowPix.com.br | Compre e Distribua Tokens</title>
+            <meta property="og:title" content="FlowPix.com.br | Compre e Distribua Tokens" key="title" />
           </Head>
           <NavigationBar user={{...user, domains: domains, address: user.addr}} />
           <Component {...pageProps} user={{...user, domains: domains, address: user.addr}} />
