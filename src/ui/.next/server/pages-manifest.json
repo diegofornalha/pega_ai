@@ -1,14 +1,6 @@
 {
-  "/_error": "pages/_error.js",
-  "/404": "pages/404.html",
-  "/500": "pages/500.html",
   "/_app": "pages/_app.js",
-  "/[account]/drops/[dropID]": "pages/[account]/drops/[dropID].html",
-  "/api/hello": "pages/api/hello.js",
-  "/create/ft_drop": "pages/create/ft_drop.html",
-  "/create/nft_raffle": "pages/create/nft_raffle.html",
-  "/": "pages/index.html",
-  "/[account]/raffles/[raffleID]": "pages/[account]/raffles/[raffleID].html",
-  "/[account]": "pages/[account].html",
-  "/_document": "pages/_document.js"
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js"
 }
