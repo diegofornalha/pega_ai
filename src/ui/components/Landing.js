@@ -30,7 +30,7 @@ export default function Landing(props) {
           </div>
           <div className="flex flex-col">
             <label className={`-mt-5 font-flow text-gray-400 font-medium text-md`}>
-              Crie um Sorteio, é tão fácil como mandar um PIX!
+              Crie um Sorteio ou Distribua tokens, é tão fácil como mandar um PIX!
             </label>
             <a href="https://www.twitter.com/flowbrasilchain"
               target="_blank"
@@ -43,7 +43,7 @@ export default function Landing(props) {
 
           {props.user && props.user.loggedIn ?
             <div className="-mt-5 flex flex-col gap-y-2">
-              <label className="font-flow text-gray-400 font-medium text-md">Escolha uma opção no Menu abaixo:</label>
+              <label className="font-flow text-gray-400 font-medium text-md">Escolha uma opção no Menu abaixo para começar:</label>
               <div className="flex flex-wrap gap-x-2 gap-y-2">
                
                 <button
