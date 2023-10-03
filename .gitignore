@@ -37,3 +37,4 @@ flow.secret.json
 *.next
 src/ui/.next
 src/ui/.next/cache
+src/ui/.next/cache/webpack/
