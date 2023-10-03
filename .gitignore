@@ -36,3 +36,4 @@ flow.secret.json
 *.bak
 *.next
 src/ui/.next
+src/ui/.next/cache
