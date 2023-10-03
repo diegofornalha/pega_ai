@@ -35,4 +35,4 @@ flow.secret.json
 *.private.json
 *.bak
 *.next
-*.next/trace
+src/ui/.next
