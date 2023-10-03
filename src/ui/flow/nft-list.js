@@ -1,17 +1,26 @@
-export const NFTList = (network) => {
-  if (network === "mainnet") {
-    return mainnetNFTList;
-  }
-  return testnetNFTList;
+const FLOAT_LOGO_URL = "/float.png";
+const HEROES_LOGO_URL = "https://flowverse.myfilebase.com/ipfs/QmU7a1eLvsmLda1VPe2ioikeWmhPwk5Xm7eV2iBUuirm55";
+
+function createNFT(name, nftType, contractName, contractAddress, collectionType, logoURL, collectionPublicPath, collectionStoragePath) {
+  return {
+    name,
+    nftType,
+    contractName,
+    contractAddress,
+    collectionType,
+    logoURL,
+    collectionPublicPath,
+    collectionStoragePath
+  };
 }
 
-export const testnetNFTList = [
-  {
-    name: "FLOAT",
-    nftType: "A.0afe396ebc8eee65.FLOAT.NFT",
-    contractName: "FLOAT",
-    contractAddress: "0x0afe396ebc8eee65",
-    collectionType: {
+const testnetNFTList = [
+  createNFT(
+    "FLOAT",
+    "A.0afe396ebc8eee65.FLOAT.NFT",
+    "FLOAT",
+    "0x0afe396ebc8eee65",
+    {
       type: "A.0afe396ebc8eee65.FLOAT.Collection",
       restrictions: [
         "A.0afe396ebc8eee65.FLOAT.CollectionPublic",
@@ -20,19 +29,19 @@ export const testnetNFTList = [
         "A.631e88ae7f1d7c20.MetadataViews.ResolverCollection"
       ]
     },
-    logoURL: "/float.png",
-    collectionPublicPath: "/public/FLOATCollectionPublicPath",
-    collectionStoragePath: "/storage/FLOATCollectionStoragePath"
-  }
+    FLOAT_LOGO_URL,
+    "/public/FLOATCollectionPublicPath",
+    "/storage/FLOATCollectionStoragePath"
+  )
 ];
 
-export const mainnetNFTList = [
-  {
-    name: "FLOAT",
-    nftType: "A.2d4c3caffbeab845.FLOAT.NFT",
-    contractName: "FLOAT",
-    contractAddress: "0x2d4c3caffbeab845",
-    collectionType: {
+const mainnetNFTList = [
+  createNFT(
+    "FLOAT",
+    "A.2d4c3caffbeab845.FLOAT.NFT",
+    "FLOAT",
+    "0x2d4c3caffbeab845",
+    {
       type: "A.2d4c3caffbeab845.FLOAT.Collection",
       restrictions: [
         "A.2d4c3caffbeab845.FLOAT.CollectionPublic",
@@ -41,16 +50,16 @@ export const mainnetNFTList = [
         "A.1d7e57aa55817448.MetadataViews.ResolverCollection"
       ]
     },
-    logoURL: "/float.png",
-    collectionPublicPath: "/public/FLOATCollectionPublicPath",
-    collectionStoragePath: "/storage/FLOATCollectionStoragePath"
-  },
-  {
-    name: "HeroesOfTheFlow",
-    nftType: "A.1dc37ab51a54d83f.HeroesOfTheFlow.NFT",
-    contractName: "HeroesOfTheFlow",
-    contractAddress: "0x1dc37ab51a54d83f",
-    collectionType: {
+    FLOAT_LOGO_URL,
+    "/public/FLOATCollectionPublicPath",
+    "/storage/FLOATCollectionStoragePath"
+  ),
+  createNFT(
+    "HeroesOfTheFlow",
+    "A.1dc37ab51a54d83f.HeroesOfTheFlow.NFT",
+    "HeroesOfTheFlow",
+    "0x1dc37ab51a54d83f",
+    {
       type: "A.1dc37ab51a54d83f.HeroesOfTheFlow.Collection",
       restrictions: [
         "A.1dc37ab51a54d83f.HeroesOfTheFlow.CollectionPublic",
@@ -59,8 +68,17 @@ export const mainnetNFTList = [
         "A.1d7e57aa55817448.MetadataViews.ResolverCollection"
       ]
     },
-    logoURL: "https://flowverse.myfilebase.com/ipfs/QmU7a1eLvsmLda1VPe2ioikeWmhPwk5Xm7eV2iBUuirm55",
-    collectionPublicPath: "/public/HeroesOfTheFlowCollection",
-    collectionStoragePath: "/storage/HeroesOfTheFlowCollection"
-  }
+    HEROES_LOGO_URL,
+    "/public/HeroesOfTheFlowCollection",
+    "/storage/HeroesOfTheFlowCollection"
+  )
 ];
+
+export const NFTList = (network) => {
+  const networkConfig = {
+    mainnet: mainnetNFTList,
+    testnet: testnetNFTList
+  };
+
+  return networkConfig[network] || [];
+};
