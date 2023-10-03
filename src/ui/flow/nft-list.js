@@ -1,66 +1,38 @@
+const NONFUNGIBLETOKEN_BASE = "A.1d7e57aa55817448.NonFungibleToken";
+const METADATAVIEWS_BASE = "A.1d7e57aa55817448.MetadataViews";
+
+const createNFTItem = (name, nftType, contractName, contractAddress, logoURL, collectionPublicPath, collectionStoragePath) => ({
+  name,
+  nftType,
+  contractName,
+  contractAddress,
+  collectionType: {
+    type: `${contractAddress}.${contractName}.Collection`,
+    restrictions: [
+      `${contractAddress}.${contractName}.CollectionPublic`,
+      `${NONFUNGIBLETOKEN_BASE}.CollectionPublic`,
+      `${NONFUNGIBLETOKEN_BASE}.Receiver`,
+      `${METADATAVIEWS_BASE}.ResolverCollection`
+    ]
+  },
+  logoURL,
+  collectionPublicPath,
+  collectionStoragePath
+});
+
 export const NFTList = (network) => {
-  if (network === "mainnet") {
-    return mainnetNFTList;
-  }
-  return testnetNFTList;
+  const networkConfig = {
+    mainnet: mainnetNFTList,
+    testnet: testnetNFTList
+  };
+  return networkConfig[network] || [];
 }
 
 export const testnetNFTList = [
-  {
-    name: "FLOAT",
-    nftType: "A.0afe396ebc8eee65.FLOAT.NFT",
-    contractName: "FLOAT",
-    contractAddress: "0x0afe396ebc8eee65",
-    collectionType: {
-      type: "A.0afe396ebc8eee65.FLOAT.Collection",
-      restrictions: [
-        "A.0afe396ebc8eee65.FLOAT.CollectionPublic",
-        "A.631e88ae7f1d7c20.NonFungibleToken.CollectionPublic",
-        "A.631e88ae7f1d7c20.NonFungibleToken.Receiver",
-        "A.631e88ae7f1d7c20.MetadataViews.ResolverCollection"
-      ]
-    },
-    logoURL: "/float.png",
-    collectionPublicPath: "/public/FLOATCollectionPublicPath",
-    collectionStoragePath: "/storage/FLOATCollectionStoragePath"
-  }
+  createNFTItem("FLOAT", "A.0afe396ebc8eee65.FLOAT.NFT", "FLOAT", "0x0afe396ebc8eee65", "/float.png", "/public/FLOATCollectionPublicPath", "/storage/FLOATCollectionStoragePath")
 ];
 
 export const mainnetNFTList = [
-  {
-    name: "FLOAT",
-    nftType: "A.2d4c3caffbeab845.FLOAT.NFT",
-    contractName: "FLOAT",
-    contractAddress: "0x2d4c3caffbeab845",
-    collectionType: {
-      type: "A.2d4c3caffbeab845.FLOAT.Collection",
-      restrictions: [
-        "A.2d4c3caffbeab845.FLOAT.CollectionPublic",
-        "A.1d7e57aa55817448.NonFungibleToken.CollectionPublic",
-        "A.1d7e57aa55817448.NonFungibleToken.Receiver",
-        "A.1d7e57aa55817448.MetadataViews.ResolverCollection"
-      ]
-    },
-    logoURL: "/float.png",
-    collectionPublicPath: "/public/FLOATCollectionPublicPath",
-    collectionStoragePath: "/storage/FLOATCollectionStoragePath"
-  },
-  {
-    name: "HeroesOfTheFlow",
-    nftType: "A.1dc37ab51a54d83f.HeroesOfTheFlow.NFT",
-    contractName: "HeroesOfTheFlow",
-    contractAddress: "0x1dc37ab51a54d83f",
-    collectionType: {
-      type: "A.1dc37ab51a54d83f.HeroesOfTheFlow.Collection",
-      restrictions: [
-        "A.1dc37ab51a54d83f.HeroesOfTheFlow.CollectionPublic",
-        "A.1d7e57aa55817448.NonFungibleToken.CollectionPublic",
-        "A.1d7e57aa55817448.NonFungibleToken.Receiver",
-        "A.1d7e57aa55817448.MetadataViews.ResolverCollection"
-      ]
-    },
-    logoURL: "https://www.flowview.app/_next/image?url=https%3A%2F%2Fflowverse.myfilebase.com%2Fipfs%2FQmU7a1eLvsmLda1VPe2ioikeWmhPwk5Xm7eV2iBUuirm55&w=128&q=75",
-    collectionPublicPath: "/public/HeroesOfTheFlowCollection",
-    collectionStoragePath: "/storage/HeroesOfTheFlowCollection"
-  }
+  createNFTItem("FLOAT", "A.2d4c3caffbeab845.FLOAT.NFT", "FLOAT", "0x2d4c3caffbeab845", "/float.png", "/public/FLOATCollectionPublicPath", "/storage/FLOATCollectionStoragePath"),
+  createNFTItem("HeroesOfTheFlow", "A.1dc37ab51a54d83f.HeroesOfTheFlow.NFT", "HeroesOfTheFlow", "0x1dc37ab51a54d83f", "https://www.flowview.app/_next/image?url=https%3A%2F%2Fflowverse.myfilebase.com%2Fipfs%2FQmU7a1eLvsmLda1VPe2ioikeWmhPwk5Xm7eV2iBUuirm55&w=128&q=75", "/public/HeroesOfTheFlowCollection", "/storage/HeroesOfTheFlowCollection")
 ];
