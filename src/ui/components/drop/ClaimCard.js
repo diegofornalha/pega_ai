@@ -47,8 +47,8 @@ const parseClaimStatus = (user, claimStatus, tokenSymbol, isPreview, distributor
   let eStatus = claimStatus.eligibility.status.rawValue
   let amount = `${new Decimal(claimStatus.eligibility.eligibleAmount).toString()} ${tokenSymbol}`
   if (eStatus === "0") {
-    elements.description = "YOU ARE ELIGIBLE FOR"
-    elements.title = "CLAIM"
+    elements.description = "VOCÊ ESTÁ ELEGÍVEL PARA"
+    elements.title = "REIVINDICAR"
     if (isRandomDistributor) {
       elements.emoji = "🎲"
       elements.amount = `❓ ${tokenSymbol}`
@@ -58,13 +58,13 @@ const parseClaimStatus = (user, claimStatus, tokenSymbol, isPreview, distributor
     }
   } else if (eStatus === "1") {
     elements.emoji = "🙉"
-    elements.description = "YOU ARE NOT ELIGIBLE"
-    elements.title = "NOT ELIGIBLE"
+    elements.description = "ESTE ENDEREÇO NÃO ESTÁ NA LISTA"
+    elements.title = "NÃO ELEGÍVEL"
     elements.amount = null
   } else if (eStatus === "2") {
     elements.emoji = "🎉"
-    elements.description = "YOU HAVE CLAIMED"
-    elements.title = "HAS CLAIMED"
+    elements.description = "VOCÊ JÁ REIVINDICOU"
+    elements.title = "RECEBIDO"
     elements.amount = amount
   }
 
