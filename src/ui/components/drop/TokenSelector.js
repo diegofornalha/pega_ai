@@ -14,7 +14,7 @@ function classNames(...classes) {
 }
 
 export default function TokenSelector(props) {
-  const [query, setQuery] = useState("brasil (BR)")
+  const [query, setQuery] = useState("")
   const [selectedToken, setSelectedToken] = useState()
   const [balance, setBalance] = useState(new Decimal(0))
   const [tokens, setTokens] = useState([]);
@@ -32,12 +32,6 @@ export default function TokenSelector(props) {
         return token
       })
       setTokens(tokenList)
-
-      // Verifique se o token "Brasil (BR)" está na lista e defina-o como selecionado
-      const brToken = tokenList.find(token => token.symbol === "BR" && token.name === "brasil");
-      if (brToken) {
-        setSelectedToken(brToken);
-      }
     })
   }, [setTokens])
 
@@ -75,7 +69,6 @@ export default function TokenSelector(props) {
       }
       <div className="relative mt-1">
         <Combobox.Input
-          defaultValue="brasil (BR)" // Valor inicial definido para "Brasil (BR)"
           className="w-full h-[50px] text-lg font-flow rounded-2xl border border-drizzle-green bg-drizzle-green-ultralight py-2 pl-3 pr-10  focus:border-drizzle-green-dark focus:outline-none focus:ring-1 focus:ring-drizzle-green-dark"
           onChange={(event) => {
             setQuery(event.target.value)
