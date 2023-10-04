@@ -6,6 +6,6 @@ config({
   "accessNode.api": publicConfig.accessNodeAPI,
   "discovery.wallet": publicConfig.walletDiscovery,
   "sdk.transport": httpSend,
-  "app.detail.title": "drizzle",
-  "app.detail.icon": "https://www.drizzle33.app/_next/image?url=%2Fdrizzle.png&w=128&q=75"
+  "app.detail.title": "flowpix",
+  "app.detail.icon": "https://www.flowpix.com.br/_next/image?url=%2Fdrizzle.png&w=128&q=75"
 })
