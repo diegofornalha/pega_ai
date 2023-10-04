@@ -345,10 +345,10 @@ export default function DropCreator(props) {
       {/** title */}
       {showPreview ?
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          PREVIEW
+          PRÉVIA
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          CRIAR SORTEIO DE COIN
+          CRIAR
         </h1>
       }
 
@@ -408,7 +408,7 @@ export default function DropCreator(props) {
 
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-            Eligibility<span className="text-red-600">*</span>
+            Modalidade<span className="text-red-600">*</span>
           </label>
           <EligibilityModeSelector mode={eligibilityMode} setMode={setEligibilityMode} setPacketMode={setPacketMode} />
         </div>

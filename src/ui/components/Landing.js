@@ -26,15 +26,23 @@ export default function Landing(props) {
             <label className="font-flow text-black font-bold text-5xl sm:text-6xl">tão simples!</label>
           </div>
           <div className="flex flex-col">
-            <label className="-mt-5 font-flow text-gray-400 font-medium text-md">
-              Crie um Sorteio ou Distribua tokens, é tão fácil como mandar um PIX!
-            </label>
-            <Link href="https://www.twitter.com/flowbrasilchain">
-              <a target="_blank" rel="noopener noreferrer" className="cursor-pointer font-flow text-drizzle-green font-medium text-md underline decoration-drizzle-green decoration-3">
-                Siga-nos no Twitter
-              </a>
-            </Link>
-          </div>
+  <label className="-mt-5 font-flow text-gray-400 font-medium text-md">
+    Distribua Seus Tokens, é tão fácil como mandar um PIX!
+  </label>
+  <div className="flex items-center gap-4">
+    <Link href="https://www.twitter.com/flowbrasilchain">
+      <a target="_blank" rel="noopener noreferrer" className="cursor-pointer font-flow text-drizzle-green font-medium text-md underline decoration-drizzle-green decoration-3">
+        Siga-nos no Twitter
+      </a>
+    </Link>
+    <span className="text-gray-400">|</span>
+    <Link href="https://global.transak.com/">
+      <a target="_blank" rel="noopener noreferrer" className="cursor-pointer font-flow text-drizzle-green font-medium text-md underline decoration-drizzle-green decoration-3">
+        Ainda não tem token flow? Compre agora!
+      </a>
+    </Link>
+  </div>
+</div>
 
           {props.user && props.user.loggedIn ? (
             <div className="-mt-5 flex flex-col gap-y-2">
@@ -51,12 +59,12 @@ export default function Landing(props) {
                   Ver e Gerenciar Histórico
                 </button>
                 <a 
-                  href="https://global.transak.com/" 
+                  href="/lista" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-drizzle-green hover:bg-drizzle-green-dark text-black px-4 py-2 rounded-md shadow-sm inline-block"
                 >
-                  Comprar Flow Via Pix
+                  LISTA VIP | Sorteio de Tokens
                 </a>
                 {}
               </div>
