@@ -64,7 +64,7 @@ const MemoizeBasicInfo = React.memo(({ nameService, host, createdAt, token, elig
       }}
       />
       <label className="w-full font-flow text-sm text-gray-400 break-words">
-        {"Created by "}
+        {"Criado por"}
         <span>
           <a
             href={`${publicConfig.appURL}/${typeof host == "string" ? host : host.address}`}

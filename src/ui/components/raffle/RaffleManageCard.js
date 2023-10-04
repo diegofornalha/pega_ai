@@ -31,16 +31,16 @@ export default function RaffleManageCard(props) {
 
   return (
     <div className="w-full flex flex-col">
-      <label className="px-3 text-2xl font-bold font-flow">MANAGE</label>
+      <label className="px-3 text-2xl font-bold font-flow">GERENCIAR</label>
       <div className="w-full mt-4 mb-10 bg-white
         overflow-hidden ring-1 ring-black ring-opacity-5 rounded-2xl
         shadow
         p-6 flex flex-col gap-y-2 items-center justify-start">
         <div className="flex w-full">
-          <label className="px-1 text-md font-flow leading-6 mb-2">Only available in&nbsp;
+          <label className="px-1 text-md font-flow leading-6 mb-2">Disponível apenas em&nbsp;
             <span className="inline-flex rounded-full px-2 text-xs font-semibold leading-6 text-yellow-800 bg-yellow-100">
-              DRAWING
-            </span> stage</label>
+            DESENHO
+            </span> estágio</label>
         </div>
         <div className="w-full flex flex-col gap-y-3 sm:flex-row sm:justify-between sm:gap-x-3">
           <button
@@ -123,8 +123,8 @@ export default function RaffleManageCard(props) {
             onClick={async () => {
               setShowAlertModal(false)
               setAlertModalContent({
-                content: "End Raffle will send all remaining NFTs back to your account, all functions of the Raffle will be stop, and nobody can recover it",
-                actionTitle: "End",
+                content: "O Final do Sorteio enviará todos os NFTs restantes de volta para sua conta, todas as funções do Sorteio serão interrompidas e ninguém poderá recuperá-lo",
+                actionTitle: "FIM",
                 action: async () => {
                   if (raffle) {
                     await endRaffle(

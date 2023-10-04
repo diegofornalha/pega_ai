@@ -49,7 +49,7 @@ export default function ManageCard(props) {
 
   return (
     <div className="w-full flex flex-col">
-      <label className="px-3 text-2xl font-bold font-flow">MANAGE</label>
+      <label className="px-3 text-2xl font-bold font-flow">GERENCIAR</label>
       <div className="w-full mt-5 mb-10 bg-white
         overflow-hidden ring-1 ring-black ring-opacity-5 rounded-2xl
         shadow
@@ -87,8 +87,8 @@ export default function ManageCard(props) {
             onClick={async () => {
               setShowAlertModal(false)
               setAlertModalContent({
-                content: "End DROP will send all remaining tokens back to your account, the rest of the eligible users will not be able to claim their rewards, and nobody can recover it",
-                actionTitle: "End",
+                content: "End DROP enviará todos os tokens restantes de volta para sua conta, o restante dos usuários elegíveis não poderá reivindicar suas recompensas e ninguém poderá recuperá-las",
+                actionTitle: "FIM",
                 action: async () => {
                   if (drop) {
                     await endDrop(
@@ -119,8 +119,8 @@ export default function ManageCard(props) {
             onClick={async () => {
               setShowAlertModal(false)
               setAlertModalContent({
-                content: "Delete DROP will send all remaining tokens back to your account, and no one can access the DROP again",
-                actionTitle: "Delete",
+                content: "Excluir DROP enviará todos os tokens restantes de volta para sua conta e ninguém poderá acessar o DROP novamente",
+                actionTitle: "EXCLUIR",
                 action: async () => {
                   if (drop) {
                     await deleteDrop(

@@ -115,7 +115,7 @@ export default function CriteriaCard(props) {
     ring-1 ring-black ring-opacity-5 rounded-3xl overflow-hidden
     sm:max-w-[240px]">
       <div className={`flex flex-col gap-y-2 ring-2 ring-drizzle-green rounded-2xl p-3 `}>
-        <label className="text-center font-flow font-semibold">WHO IS ELIGIBLE?</label>
+        <label className="text-center font-flow font-semibold">QUEM É ELEGÍVEL?</label>
         {drizzle ?  getCriteriaLabel(drizzle, type)
         : getCriteriaLabelPreview(eligibilityMode, floatGroup, floatEventPairs, threshold, type)
         }

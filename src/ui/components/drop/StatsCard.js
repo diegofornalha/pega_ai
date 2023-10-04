@@ -208,7 +208,7 @@ export default function StatsCard(props) {
         }
       </div>
 
-      <label className="px-3 text-2xl font-bold font-flow">CLAIMERS</label>
+      <label className="px-3 text-2xl font-bold font-flow">QUEM RECEBEU</label>
       {claimed.length > 0 ?
         <div className="w-full p-4 flex flex-col mb-10">
           <div className="-my-2 -mx-4 overflow-x-auto">
@@ -294,7 +294,7 @@ export default function StatsCard(props) {
         </div> :
         <div className="mb-10 w-full flex justify-center">
           <label className="mt-10 leading-10 font-flow font-medium text-base text-gray-500">
-            This DROP has not been claimed yet
+          Este DROP ainda não foi reivindicado
           </label>
         </div>}
     </div>
