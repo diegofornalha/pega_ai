@@ -35,7 +35,7 @@ import CreatedModal from '../common/CreatedModal'
 import publicConfig from '../../publicConfig'
 import StatsCard from './StatsCard'
 
-const NamePlaceholder = "Campanha de Marketing"
+const NamePlaceholder = "Campanha de Marketing - 1"
 const DescriptionPlaceholder = ""
 const HostPlaceholder = "0x0042"
 const TokenPlaceholder = { symbol: "FLOW" }

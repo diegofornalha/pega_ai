@@ -370,7 +370,7 @@ export const filterAddresses = async (rawRecordsStr) => {
     const address = domains[candidate]
     if (address) {
       if (addresses[address]) {
-        invalidAddresses.push(`${candidate}(${address}): Duplicate address`)
+        invalidAddresses.push(`${candidate}(${address}): Endereço duplicado`)
       } else {
         addresses[address] = true
         validAddresses.push(address)
