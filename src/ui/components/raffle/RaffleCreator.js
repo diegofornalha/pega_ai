@@ -31,7 +31,7 @@ import RaffleStatsCard from './RaffleStatsCard'
 import RewardCard from './RewardCard'
 
 const NamePlaceholder = "Nome do Sorteio"
-const DescriptionPlaceholder = "Detailed information about this RAFFLE"
+const DescriptionPlaceholder = "Informações detalhadas sobre este SORTEIO"
 const HostPlaceholder = "0x0042"
 const CreatedAtPlaceholder = new Date('2020-08-01T08:16:16Z')
 const Timezone = getTimezone()

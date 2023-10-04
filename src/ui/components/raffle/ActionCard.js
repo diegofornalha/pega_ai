@@ -51,128 +51,128 @@ const parseClaimStatus = (user, claimStatus, displayName, isPreview) => {
   if (aStatus === "1") {
     // ended expired and no capacity
     elements.emoji = "⛔️"
-    elements.title = "RAFFLE ENDED"
+    elements.title = "SORTEIO TERMINOU"
     // Keep the draw result
     if (eStatusC == "5") {
-      elements.description = "YOU HAVE CLAIMED" 
+      elements.description = "VOCÊ REIVINDICOU" 
       elements.amount = winnerAmount
     } else if (eStatusC == "1") {
-      elements.description = "YOU WON" 
+      elements.description = "VOCÊ GANHOU" 
       elements.amount = winnerAmount
     } else {
-      elements.description = "NO LONGER AVAILABLE"
+      elements.description = "NÃO ESTÁ DISPONÍVEL"
       elements.amount = null 
     }
   } else if (aStatus === "5") {
     elements.emoji = "⛔️"
-    elements.title = "RAFFLE EXPIRED"
+    elements.title = "SORTEIO EXPIROU"
     // Keep the draw result
     if (eStatusC == "5") {
-      elements.description = "YOU HAVE CLAIMED" 
+      elements.description = "VOCÊ REIVINDICOU" 
       elements.amount = winnerAmount
     } else if (eStatusC == "1") {
-      elements.description = "YOU WON" 
+      elements.description = "VOCÊ GANHOU" 
       elements.amount = winnerAmount
     } else {
-      elements.description = "NO LONGER AVAILABLE"
+      elements.description = "NÃO ESTÁ DISPONÍVEL"
       elements.amount = null 
     }
   } else if (aStatus === "3") {
     if (eStatusC == "5") {
       elements.emoji = "🎉"
-      elements.description = "YOU HAVE CLAIMED" 
+      elements.description = "VOCÊ REIVINDICOU" 
       elements.amount = winnerAmount
-      elements.title = "HAVE CLAIMED"
+      elements.title = "FOI REIVINDICADO"
     } else if (eStatusC == "1") {
       elements.emoji = "🎉"
-      elements.description = "YOU WON" 
+      elements.description = "VOCÊ GANHOU" 
       elements.amount = winnerAmount
-      elements.title = "CLAIM"
+      elements.title = "REIVINDICAR"
     } else if (eStatusC == "3" && eStatusR == "4") {
       elements.emoji = "🎲"
-      elements.description = "MAY YOU BE THE WINNER"  
+      elements.description = "VOCÊ ESTÁ NA LISTA DE ESPERA"  
       elements.amount = null
-      elements.title = "RAFFLE DRAWING"
+      elements.title = "SORTEIO EM ANDAMENTO"
     } else if (eStatusR == "0") {
       // eligible for registration but not late
       elements.emoji = "🦥"
-      elements.description = "YOU ARE LATE FOR REGISTRATION"
-      elements.title = "TOO LATE"
+      elements.description = "VOCÊ DEIXOU PASSAR O REGISTRO"
+      elements.title = "TARDE DEMAIS"
       elements.amount = null  
     } else {
       elements.emoji = "🙉"
-      elements.description = "YOU ARE NOT ELIGIBLE"
-      elements.title = "NOT ELIGIBLE"
+      elements.description = "VOCÊ NÃO É ELEGÍVEL"
+      elements.title = "NÃO ELEGÍVEL"
       elements.amount = null 
     }
   } else if (aStatus === "4") {
     if (eStatusC == "5") {
       elements.emoji = "🎉"
-      elements.description = "YOU HAVE CLAIMED" 
+      elements.description = "VOCÊ REIVINDICOU" 
       elements.amount = winnerAmount
-      elements.title = "HAVE CLAIMED"
+      elements.title = "FOI REIVINDICADO"
     } else if (eStatusC == "1") {
       elements.emoji = "🎉"
-      elements.description = "YOU WON" 
+      elements.description = "VOCÊ GANHOU" 
       elements.amount = winnerAmount
-      elements.title = "CLAIM"
+      elements.title = "REIVINDICAR"
     } else if (eStatusC == "3" && eStatusR == "4") {
       elements.emoji = "🙈"
-      elements.description = "YOU ARE NOT WINNER"
-      elements.title = "NOT WINNER"
+      elements.description = "VOCÊ NÃO É O GANHADOR"
+      elements.title = "NÃO GANHOU"
       elements.amount = null
     } else if (eStatusR == "0") {
       // eligible for registration but not late
       elements.emoji = "🦥"
-      elements.description = "YOU ARE LATE FOR REGISTRATION"
-      elements.title = "TOO LATE"
+      elements.description = "VOCÊ DEIXOU PASSAR O REGISTRO"
+      elements.title = "TARDE DEMAIS"
       elements.amount = null  
     } else {
       elements.emoji = "🙉"
-      elements.description = "YOU ARE NOT ELIGIBLE"
-      elements.title = "NOT ELIGIBLE"
+      elements.description = "VOCÊ NÃO É ELEGÍVEL"
+      elements.title = "NÃO ELEGÍVEL"
       elements.amount = null 
     }
   } else if (aStatus === "0") {
     elements.emoji = "🕙"
-    elements.description = "DIDA DIDA ..."   
-    elements.title = "NOT STARTED YET"
+    elements.description = "TIC TAC ..."   
+    elements.title = "NÃO INICIADO AINDA"
     elements.amount = null
   } else if (aStatus === "6") {
     elements.emoji = "⏸️"
-    elements.title = "RAFFLE PAUSED"
+    elements.title = "SORTEIO EM PAUSA"
     if (eStatusC == "5") {
-      elements.description = "YOU HAVE CLAIMED" 
+      elements.description = "VOCÊ REINVINDICOU" 
       elements.amount = winnerAmount
-      elements.description = "YOU WON" 
+      elements.description = "VOCÊ GANHOU"" 
       elements.amount = winnerAmount
     } else if (eStatusC == "3") {
       if (eStatusR == "4") {
-        elements.description = "YOU HAVE REGISTERED"
+        elements.description = "VOCÊ FOI REGISTRADO"
         elements.amount = null
       } else if (eStatusR == "2") {
-        elements.description = "YOU ARE NOT ELIGIBLE" 
+        elements.description = "VOCÊ NÃO ESTÁ NA LISTA"" 
         elements.amount = null
       } else if (eStatusR == "0") {
-        elements.description = "YOU ARE ELIGIBLE" 
+        elements.description = "VOCÊ ESTÁ NA LISTA" 
         elements.amount = null
       }
     } 
   } else if (aStatus === "2") {
     if (eStatusR === "0") {
       elements.emoji = "✅"
-      elements.description = "YOU ARE ELIGIBLE"
-      elements.title = "REGISTER NOW"
+      elements.description = "VOCÊ ESTÁ NA LISTA"
+      elements.title = "REGISTRAR AGORA"
       elements.amount = null
     } else if (eStatusR === "2") {
       elements.emoji = "🙉"
-      elements.description = "YOU ARE NOT ELIGIBLE"
-      elements.title = "NOT ELIGIBLE"
+      elements.description = "VOCÊ NÃO ESTÁ NA LISTA"
+      elements.title = "NÃO ELEGÍVEL"
       elements.amount = null
     } else if (eStatusR === "4") {
       elements.emoji = "✅"
-      elements.description = "YOU HAVE REGISTERED"
-      elements.title = "COME BACK LATER"
+      elements.description = "VOCÊ ESTÁ REGISTRADO"
+      elements.title = "VOLTE MAIS TARDE"
       elements.amount = null
     }  
   }
