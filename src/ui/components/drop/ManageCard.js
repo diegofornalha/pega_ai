@@ -75,7 +75,7 @@ export default function ManageCard(props) {
               }
             }}
           >
-            {drop && drop.isPaused ? "RESUME" : "PAUSE"}
+            {drop && drop.isPaused ? "RETOMAR" : "PAUSAR"}
           </button>
           <button
             type="button"
@@ -107,7 +107,7 @@ export default function ManageCard(props) {
               setShowAlertModal(true)
               return
             }}>
-            END
+            FINALIZAR
           </button>
           <button
             type="button"
@@ -137,7 +137,7 @@ export default function ManageCard(props) {
               })
               setShowAlertModal(true)
             }}>
-            DELETE
+            EXCLUIR
           </button>
         </div>
 
