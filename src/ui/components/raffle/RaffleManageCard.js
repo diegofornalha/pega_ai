@@ -124,7 +124,7 @@ export default function RaffleManageCard(props) {
               setShowAlertModal(false)
               setAlertModalContent({
                 content: "O Final do Sorteio enviará todos os NFTs restantes de volta para sua conta, todas as funções do Sorteio serão interrompidas e ninguém poderá recuperá-lo",
-                actionTitle: "FIM",
+                actionTitle: "Finalizar",
                 action: async () => {
                   if (raffle) {
                     await endRaffle(

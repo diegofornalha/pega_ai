@@ -64,7 +64,7 @@ const MemoizeBasicInfo = React.memo(({ nameService, host, createdAt, token, elig
       }}
       />
       <label className="w-full font-flow text-sm text-gray-400 break-words">
-        {"Criado por"}
+        {"Criado por "}
         <span>
           <a
             href={`${publicConfig.appURL}/${typeof host == "string" ? host : host.address}`}
@@ -76,7 +76,7 @@ const MemoizeBasicInfo = React.memo(({ nameService, host, createdAt, token, elig
         </span>
       </label>
       <label className="w-full font-flow text-sm text-gray-400 break-words">
-        {`Created at ${createdAt.toLocaleString()}`}
+        {`Criado no dia ${createdAt.toLocaleString()}`}
       </label>
     </div>
   )

@@ -73,31 +73,31 @@ const parseClaimStatus = (user, claimStatus, tokenSymbol, isPreview, distributor
   if (aStatus === "1") {
     // ended expired and no capacity
     elements.emoji = "⛔️"
-    elements.title = "DROP ENDED"
+    elements.title = "DROP FINALIZADO"
     if (eStatus != "2") {
-      elements.description = "NO LONGER AVAILABLE"
+      elements.description = "NÃO ESTÁ MAIS DISPONÍVEL"
       elements.amount = null
     }
   } else if (aStatus === "3") {
     elements.emoji = "⛔️"
-    elements.title = "DROP EXPIRED"
+    elements.title = "DROP EXPIRADO"
     if (eStatus != "2") {
-      elements.description = "NO LONGER AVAILABLE"
+      elements.description = "NÃO ESTÁ MAIS DISPONÍVEL"
       elements.amount = null
     }
   } else if (aStatus === "4") {
     elements.emoji = "⛔️"
-    elements.title = "DROP ENDED"
+    elements.title = "DROP FINALIZADO"
     if (eStatus != "2") {
-      elements.description = "NO LONGER AVAILABLE"
+      elements.description = "NÃO ESTÁ MAIS DISPONÍVEL"
       elements.amount = null
     }
   } else if (aStatus === "2") {
     elements.emoji = "🕙"
-    elements.title = "NOT STARTED YET"
+    elements.title = "NÃO INICIADO"
   } else if (aStatus === "5") {
     elements.emoji = "⏸️"
-    elements.title = "DROP PAUSED"
+    elements.title = "DROP PAUSADO"
   }
 
   return elements

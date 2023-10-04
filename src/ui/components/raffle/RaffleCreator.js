@@ -318,7 +318,7 @@ export default function RaffleCreator(props) {
           PREVIA DO SORTEIO DE NFT 
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          CRIAR SORTEIO DE NFT
+          EM MANUTENÇÃO
         </h1>
       }
 

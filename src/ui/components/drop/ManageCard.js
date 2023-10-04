@@ -88,7 +88,7 @@ export default function ManageCard(props) {
               setShowAlertModal(false)
               setAlertModalContent({
                 content: "End DROP enviará todos os tokens restantes de volta para sua conta, o restante dos usuários elegíveis não poderá reivindicar suas recompensas e ninguém poderá recuperá-las",
-                actionTitle: "FIM",
+                actionTitle: "Finalizar",
                 action: async () => {
                   if (drop) {
                     await endDrop(

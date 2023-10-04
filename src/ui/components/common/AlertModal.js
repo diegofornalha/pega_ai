@@ -66,7 +66,7 @@ export default function AlertModal() {
                     onClick={() => setShowAlertModal(false)}
                     ref={cancelButtonRef}
                   >
-                    Cancel
+                    Cancelar
                   </button>
                 </div>
               </Dialog.Panel>

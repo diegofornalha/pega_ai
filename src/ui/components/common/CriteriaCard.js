@@ -16,7 +16,7 @@ const getCriteriaLabel = (drizzle, type) => {
   if (verifier.type === "Whitelist") {
     return (
       <label className="w-full font-flow font-medium text-sm break-words">
-        {`On the whitelist of this ${type}`}
+        {`Na lista deste ${type}`}
       </label>
     )
   }
@@ -64,7 +64,7 @@ const getCriteriaLabelPreview = (
     eligibilityMode.key === EligibilityModeWhitelist.key) {
     return (
       <label className="w-full font-flow font-medium text-sm break-words">
-        {`On the whitelist of this ${type}`}
+        {`Na lista deste ${type}`}
       </label>
     )
   }
