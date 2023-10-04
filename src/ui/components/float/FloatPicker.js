@@ -73,7 +73,7 @@ export default function FloatPicker(props) {
       <label className="block text-2xl font-bold font-flow">
         {mode.title}<span className="text-red-600">*</span>
       </label>
-      <Warning content="FLOAT(s) received after the creation of this DROP will not be counted in when checking eligibility." />
+      <Warning content="FLOAT(s) recebidos após a criação deste DROP não serão contabilizados na verificação de elegibilidade." />
       <label className="block font-flow text-md leading-6 mt-2 mb-2">
         {mode.description}
       </label>
@@ -128,16 +128,16 @@ export default function FloatPicker(props) {
                     setFloatGroup(group)
                     setFloatEvents(events)
                   } else {
-                    throw "Group not exist or no events in group"
+                    throw "O grupo não existe ou não há eventos no grupo"
                   }
                 }
 
               } catch (error) {
                 let err = error.message || error
-                if (err.includes("This event does not exist in the account")) {
-                  err = "This event does not exist in the account"
-                } else if (err.includes("This group doesn't exist")) {
-                  err = "This group doesn't exist"
+                if (err.includes("Este evento não existe na conta")) {
+                  err = "Este evento não existe na conta"
+                } else if (err.includes("Este grupo não existe")) {
+                  err = "Este grupo não existe"
                 }
                 setShowBasicNotification(true)
                 setBasicNotificationContent({ type: "exclamation", title: "Invalid Params", detail: err })

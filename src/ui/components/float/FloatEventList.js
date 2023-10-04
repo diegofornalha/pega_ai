@@ -88,7 +88,7 @@ export default function FloatEventList(props) {
         </div> :
         <div className="flex mb-10 justify-center">
           <label className="leading-[200px] font-flow font-medium text-base text-gray-500">
-            {"No FLOATs found"}
+            {"Nenhum FLOAT encontrado"}
           </label>
         </div>}
     </>
