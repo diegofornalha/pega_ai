@@ -144,14 +144,14 @@ const parseClaimStatus = (user, claimStatus, displayName, isPreview) => {
     if (eStatusC == "5") {
       elements.description = "VOCÊ REINVINDICOU" 
       elements.amount = winnerAmount
-      elements.description = "VOCÊ GANHOU"" 
+      elements.description = "VOCÊ GANHOU"
       elements.amount = winnerAmount
     } else if (eStatusC == "3") {
       if (eStatusR == "4") {
         elements.description = "VOCÊ FOI REGISTRADO"
         elements.amount = null
       } else if (eStatusR == "2") {
-        elements.description = "VOCÊ NÃO ESTÁ NA LISTA"" 
+        elements.description = "VOCÊ NÃO ESTÁ NA LISTA"
         elements.amount = null
       } else if (eStatusR == "0") {
         elements.description = "VOCÊ ESTÁ NA LISTA" 

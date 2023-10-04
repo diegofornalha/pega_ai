@@ -52,8 +52,8 @@ export default function RafflePresenter(props) {
         </div>
       }
       <AlertModal />
-      <ClaimedModal open={showClaimedModal} setOpen={setShowClaimedModal} rewardInfo={rewardInfo} title="Claimed Successfully!" />
-      <ClaimedModal open={showRegisteredModal} setOpen={setShowRegisteredModal} title="Registered Successfully!" />
+      <ClaimedModal open={showClaimedModal} setOpen={setShowClaimedModal} rewardInfo={rewardInfo} title="Reivindicado com sucesso!" />
+      <ClaimedModal open={showRegisteredModal} setOpen={setShowRegisteredModal} title="Registrado com sucesso!" />
     </>
   )
 }
