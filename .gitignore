@@ -44,3 +44,4 @@ src/ui/.next/server/pages-manifest.json
 src/ui/.next/cache/images
 src/ui/.next/cache/webpack/client-development
 src/ui/.next/server/pages-manifest.json
+src/ui/.next/cache/webpack/server-development
