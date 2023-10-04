@@ -30,11 +30,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/create/ft_drop": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/create/ft_drop.js"
-    ],
     "/create/nft_raffle": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
