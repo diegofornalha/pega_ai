@@ -55,7 +55,7 @@ export default function ClaimedModal(props) {
                       setOpen(false)
                     }}
                   >
-                    HOORAY!
+                    IHULLL!
                   </button>
                 </div>
               </Dialog.Panel>
