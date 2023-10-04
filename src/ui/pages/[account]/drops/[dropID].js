@@ -76,11 +76,11 @@ export default function Drop(props) {
   }, [dropData, claimStatusData])
 
   if (dropError && dropError.statusCode === 400) {
-    return <Custom404 title={"DROP may not exist or deleted"} />
+    return <Custom404 title={"DROP pode não existir ou ser excluído"} />
   }
 
   if (claimStatusError && claimStatusError.statusCode === 400) {
-    return <Custom404 title={"Raffle may not exist or deleted"} />
+    return <Custom404 title={"O sorteio pode não existir ou ser excluído"} />
   }
 
   return (

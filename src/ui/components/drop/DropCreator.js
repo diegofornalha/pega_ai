@@ -439,7 +439,7 @@ export default function DropCreator(props) {
               setShowPreview(false)
             }}
           >
-            BACK
+            VOLTAR
           </button> : null
         }
         <button

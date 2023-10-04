@@ -1,6 +1,6 @@
 export default function Custom404(props) {
   const title = props.title || "Page not found"
-  const detail = props.detail || "Please check the URL in the address bar and try again."
+  const detail = props.detail || "Verifique o URL na barra de endereço e tente novamente."
   return (
     <>
       <div className="min-h-[40vh] px-8 py-16 sm:py-24 md:grid md:place-items-center lg:px-8">
