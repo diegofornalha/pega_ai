@@ -103,7 +103,7 @@ export default function BasicInfoBoard(props) {
         {/** url */}
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-          Link Oficial
+          Link
           </label>
           <div className="mt-1">
             <input

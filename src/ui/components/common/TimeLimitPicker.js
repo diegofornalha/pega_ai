@@ -1,42 +1,50 @@
-import { useRecoilState } from "recoil"
-import { Switch } from '@headlessui/react'
+import { useRecoilState } from "recoil";
+import { Switch } from '@headlessui/react';
 
 import {
   transactionInProgressState
-} from "../../lib/atoms"
-import { classNames, getTimezone } from '../../lib/utils';
+} from "../../lib/atoms";
+import { classNames } from '../../lib/utils';
 import { useEffect, useState } from "react";
 
-const Timezone = getTimezone()
+const getTimezone = () => {
+  return "America/Sao_Paulo"; // Fuso horário de Brasília
+}
 
 export default function TimeLimitPicker(props) {
-  const [transactionInProgress,] = useRecoilState(transactionInProgressState)
-  const [timezone, setTimezone] = useState(null)
+  const [transactionInProgress,] = useRecoilState(transactionInProgressState);
+  const [timezone, setTimezone] = useState(null);
 
   const {
     timeLockEnabled, setTimeLockEnabled,
     setStartAt, setEndAt
-  } = props
+  } = props;
 
   useEffect(() => {
-    setTimezone(Timezone)
-  }, [timezone])
+    setTimezone(getTimezone());
+  }, [timezone]);
+
+  const handleDateChange = (e, setDateFunc) => {
+    const dateInUTC = new Date(e.target.value);
+    const dateInBrasilia = new Date(dateInUTC.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }));
+    setDateFunc(dateInBrasilia);
+  }
 
   return (
     <div>
       <div className="flex justify-between items-center">
         <label className="block text-2xl font-bold font-flow">
-          Time Limit{timezone ? ` (${timezone})` : ''}
+          Limite de tempo{timezone ? ` (${timezone})` : ''}
         </label>
         <Switch
           disabled={transactionInProgress}
           checked={timeLockEnabled}
           onChange={() => {
             if (timeLockEnabled) {
-              setStartAt(null)
-              setEndAt(null)
+              setStartAt(null);
+              setEndAt(null);
             }
-            setTimeLockEnabled(!timeLockEnabled)
+            setTimeLockEnabled(!timeLockEnabled);
           }}
           className={classNames(
             timeLockEnabled ? 'bg-drizzle-green' : 'bg-gray-200',
@@ -55,29 +63,29 @@ export default function TimeLimitPicker(props) {
 
       {timeLockEnabled ?
         <>
-        <div className="mt-2 flex flex-col sm:flex-row justify-between gap-x-4 gap-y-2 flex-wrap">
-          <div className="flex items-center gap-x-2">
-            <label className="inline-block w-12 font-flow font-bold">Start</label>
-            <input
-              type="datetime-local"
-              disabled={transactionInProgress}
-              id="start_at"
-              className="rounded-2xl focus:ring-drizzle-green-dark focus:border-drizzle-green-dark bg-drizzle-green-ultralight block w-full border-drizzle-green font-flow text-lg placeholder:text-gray-300 min-w-[220px]"
-              onChange={(e) => { setStartAt(new Date(e.target.value)) }}
-            />
-          </div>
+          <div className="mt-2 flex flex-col sm:flex-row justify-between gap-x-4 gap-y-2 flex-wrap">
+            <div className="flex items-center gap-x-2">
+              <label className="inline-block w-12 font-flow font-bold">Start</label>
+              <input
+                type="datetime-local"
+                disabled={transactionInProgress}
+                id="start_at"
+                className="rounded-2xl focus:ring-drizzle-green-dark focus:border-drizzle-green-dark bg-drizzle-green-ultralight block w-full border-drizzle-green font-flow text-lg placeholder:text-gray-300 min-w-[220px]"
+                onChange={(e) => handleDateChange(e, setStartAt)}
+              />
+            </div>
 
-          <div className="flex items-center gap-x-2">
-            <label className="inline-block w-12 font-flow font-bold">End</label>
-            <input
-              type="datetime-local"
-              disabled={transactionInProgress}
-              id="end_at"
-              className="rounded-2xl focus:ring-drizzle-green-dark focus:border-drizzle-green-dark bg-drizzle-green-ultralight block w-full border-drizzle-green font-flow text-lg placeholder:text-gray-300 min-w-[220px]"
-              onChange={(e) => { setEndAt(new Date(e.target.value)) }}
-            />
+            <div className="flex items-center gap-x-2">
+              <label className="inline-block w-12 font-flow font-bold">End</label>
+              <input
+                type="datetime-local"
+                disabled={transactionInProgress}
+                id="end_at"
+                className="rounded-2xl focus:ring-drizzle-green-dark focus:border-drizzle-green-dark bg-drizzle-green-ultralight block w-full border-drizzle-green font-flow text-lg placeholder:text-gray-300 min-w-[220px]"
+                onChange={(e) => handleDateChange(e, setEndAt)}
+              />
+            </div>
           </div>
-        </div>
         </> : null}
     </div>
   )
