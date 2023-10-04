@@ -22,9 +22,9 @@ const NotificationContent = ({ txStatus }) => {
         </div>
         <div className="ml-3 w-0 flex-1 pt-0.5">
           <div className="flex gap-x-2">
-            <p className="text-sm font-bold font-flow text-gray-900">Initializing</p>
+            <p className="text-sm font-bold font-flow text-gray-900">Inicializando</p>
           </div>
-          <p className="mt-1 text-sm text-gray-500">Waiting for approval</p>
+          <p className="mt-1 text-sm text-gray-500">Esperando aprovação</p>
         </div>
       </>
     )
@@ -38,7 +38,7 @@ const NotificationContent = ({ txStatus }) => {
         </div>
         <div className="ml-3 w-0 flex-1 pt-0.5">
           <div className="flex gap-x-2">
-            <p className="text-sm font-bold font-flow text-gray-900">Pending</p>
+            <p className="text-sm font-bold font-flow text-gray-900">Pendente</p>
             <a
               href={`${publicConfig.flowscanURL}/transaction/${txStatus.txid}`}
               rel="noopener noreferrer"
@@ -46,7 +46,7 @@ const NotificationContent = ({ txStatus }) => {
               {`${txStatus.txid}`}
             </a >
           </div>
-          <p className="mt-1 text-sm text-gray-500">Waiting for confirmation</p>
+          <p className="mt-1 text-sm text-gray-500">Aguardando confirmação</p>
         </div>
       </>
     )
@@ -60,7 +60,7 @@ const NotificationContent = ({ txStatus }) => {
         </div>
         <div className="ml-3 w-0 flex-1 pt-0.5">
           <div className="flex gap-x-2">
-            <p className="text-sm font-bold font-flow text-gray-900">Success</p>
+            <p className="text-sm font-bold font-flow text-gray-900">Sucesso</p>
             <a
               href={`${publicConfig.flowscanURL}/transaction/${txStatus.txid}`}
               rel="noopener noreferrer"
@@ -68,7 +68,7 @@ const NotificationContent = ({ txStatus }) => {
               {`${txStatus.txid}`}
             </a >
           </div>
-          <p className="mt-1 text-sm text-gray-500">Transaction successfully confirmed!</p>
+          <p className="mt-1 text-sm text-gray-500">Transação confirmada com sucesso!</p>
         </div>
       </>
     )
@@ -82,7 +82,7 @@ const NotificationContent = ({ txStatus }) => {
         </div>
         <div className="ml-3 w-0 flex-1 pt-0.5">
           <div className="flex gap-x-2">
-            <p className="text-sm font-bold font-flow text-gray-900">Failed</p>
+            <p className="text-sm font-bold font-flow text-gray-900">Falhou</p>
             {
               txStatus.txid ? (
                 <a
