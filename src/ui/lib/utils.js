@@ -376,7 +376,7 @@ export const filterAddresses = async (rawRecordsStr) => {
         validAddresses.push(address)
       }
     } else {
-      invalidAddresses.push(`${candidate}: Address not found`)
+      invalidAddresses.push(`${candidate}: Endereço não encontrado`)
     }
   }
 
@@ -449,7 +449,7 @@ export const filterRecords = async (rawRecordsStr) => {
         validRecords.push(candidate)
       }
     } else {
-      invalidRecords.push(`${candidate.rawRecord}: Address not found`)
+      invalidRecords.push(`${candidate.rawRecord}: Endereço não encontrado`)
     }
   }
 
