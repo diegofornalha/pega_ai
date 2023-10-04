@@ -38,3 +38,7 @@ flow.secret.json
 src/ui/.next
 src/ui/.next/cache
 src/ui/.next/cache/webpack/
+src/ui/.next/build-manifest.json
+src/ui/.next/server/middleware-build-manifest.js
+src/ui/.next/server/pages-manifest.json
+src/ui/.next/cache/images
