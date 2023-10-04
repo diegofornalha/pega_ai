@@ -45,3 +45,10 @@ src/ui/.next/cache/images
 src/ui/.next/cache/webpack/client-development
 src/ui/.next/server/pages-manifest.json
 src/ui/.next/cache/webpack/server-development
+src/ui/.next/cache/webpack/client-development/0.pack
+src/ui/.next/cache/webpack/client-development/1.pack
+src/ui/.next/cache/webpack/client-development/2.pack
+src/ui/.next/cache/webpack/client-development/3.pack
+src/ui/.next/cache/webpack/client-development/4.pack
+
+src/ui/.next/cache/webpack/server-development/index.pack
