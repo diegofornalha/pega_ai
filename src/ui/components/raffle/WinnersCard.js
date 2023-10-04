@@ -23,7 +23,7 @@ export default function WinnersCard(props) {
 
   return (
     <div className="w-full flex flex-col">
-      <label className="px-3 text-2xl font-bold font-flow">WINNERS</label>
+      <label className="px-3 text-2xl font-bold font-flow">VENCEDORES</label>
       {winners.length > 0 ?
         <div className="w-full p-4 flex flex-col mb-10">
           <div className="-my-2 -mx-4 overflow-x-auto">

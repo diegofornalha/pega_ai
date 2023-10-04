@@ -15,15 +15,10 @@
     "static/development/_middlewareManifest.js"
   ],
   "pages": {
-    "/": [
+    "/[account]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
-    "/500": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/500.js"
+      "static/chunks/pages/[account].js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
@@ -35,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/create/ft_drop": [
+    "/create/nft_raffle": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/create/ft_drop.js"
+      "static/chunks/pages/create/nft_raffle.js"
     ]
   },
   "ampFirstPages": []
