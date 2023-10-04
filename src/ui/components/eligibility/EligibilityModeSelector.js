@@ -198,15 +198,11 @@ export const EligibilityModeFLOATGroup = {
 }
 
 const dropModes = [
-  EligibilityModeFLOAT,
-  EligibilityModeFLOATGroup,
   EligibilityModeWhitelist,
   EligibilityModeWhitelistWitAmount,
 ]
 
 const raffleModes = [
-  EligibilityModeFLOAT,
-  EligibilityModeFLOATGroup,
   EligibilityModeWhitelist 
 ]
 
