@@ -23,7 +23,7 @@ export default function ClaimHistory(props) {
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-2xl font-bold text-gray-900">
-            {`Claimed DROPs (${records.length})`}
+            {`Histórico de Tokens que Recebi (${records.length})`}
           </h1>
         </div>
       </div>
@@ -113,7 +113,7 @@ export default function ClaimHistory(props) {
         </div> :
         <div className="flex mb-10 justify-center">
           <label className="leading-[200px] font-flow font-medium text-base text-gray-500">
-          {isCurrentUser ? "You haven't claimed any DROP yet" : "This account haven't claimed any DROP yet"}
+          {isCurrentUser ? "Nenhuma reivindicação de tokens feita por você" : "Esta conta ainda não reivindicou tokens"}
           </label>
         </div>}
     </div>

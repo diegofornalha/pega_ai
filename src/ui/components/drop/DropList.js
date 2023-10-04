@@ -25,7 +25,7 @@ export default function DropList(props) {
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-2xl font-bold text-gray-900">
-            {isCurrentUser ? `My DROPs (${drops.length})` : `DROPs (${drops.length})`}
+            {isCurrentUser ? `Minhas Campanhas  de Distribuição(${drops.length})` : `Distribuições (${drops.length})`}
           </h1>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
@@ -47,7 +47,7 @@ export default function DropList(props) {
                   router.push("/create/ft_drop")
                 }}
               >
-                New DROP
+                CRIAR NOVA DISTRIBUIÇÃO DE TOKEN
               </button> : null
           }
         </div>
@@ -161,7 +161,7 @@ export default function DropList(props) {
         </div> :
         <div className="flex mb-10 justify-center">
           <label className="leading-[200px] font-flow font-medium text-base text-gray-500">
-            {isCurrentUser ? "You haven't created DROP yet" : "This account haven't created DROP yet"}
+            {isCurrentUser ? "Nada criado ainda" : "Esta conta ainda não criou distribuições de tokens"}
           </label>
         </div>}
     </div>
