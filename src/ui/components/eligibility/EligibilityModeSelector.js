@@ -7,10 +7,10 @@ import { useEffect } from 'react'
 
 export const EligibilityModeWhitelistWitAmount = {
   key: "WhitelistWithAmount",
-  name: 'Distribuição Flexível',
+  name: 'Whitelist with Amount',
   intro: (type) => {
     if (type === "DROP") {
-      return 'Distribuir quantia específica para conta específica na lista de permissões'
+      return 'Distribute specific amount to specific account on whitelist'
     }
 
     if (type === "RAFFLE") {
@@ -44,10 +44,10 @@ export const EligibilityModeWhitelistWitAmount = {
 
 export const EligibilityModeWhitelist = {
   key: "Whitelist",
-  name: 'Lista de Ganhadores',
+  name: 'Whitelist',
   intro: (type) => {
     if (type === "DROP") {
-      return 'Distribua tokens para contas específicas da sua lista'
+      return 'Distribute tokens to holders of specific FLOAT. FCFS'
     }
 
     if (type === "RAFFLE") {
@@ -135,74 +135,14 @@ export const EligibilityModeFLOAT = {
   }
 }
 
-export const EligibilityModeFLOATGroup = {
-  key: "FLOATGroup",
-  name: 'FLOAT Group',
-  intro: (type) => {
-    if (type === "DROP") {
-      return 'Distribute tokens to holders of FLOATs in specific FLOAT Group. FCFS'
-    }
-
-    if (type === "RAFFLE") {
-      return 'Holders of FLOATs in specific FLOAT Group is eligible for registration'
-    }
-
-    return ""
-  },
-  detail: FloatModeFloatGroup,
-  checkParams: (floatEvents, threshold, packetMode, totalBalance, capacity, amount = {}) => {
-    try {
-      const [valid, hint] = checkPacketMode(packetMode, totalBalance, capacity, amount)
-      if (!valid) {
-        throw hint
-      }
-
-      if (floatEvents.length == 0) {
-        throw Hints.EmptyFloatGroup
-      }
-
-      if (!threshold || isNaN(parseInt(threshold))) {
-        throw Hints.InvalidThreshold
-      }
-
-      const _threshold = new Decimal(threshold)
-      if (!(_threshold.isInteger() && _threshold.isPositive() && !_threshold.isZero() && _threshold.toNumber() <= floatEvents.length)) {
-        throw Hints.InvalidThreshold
-      }
-
-      return [true, Hints.Valid]
-    } catch (error) {
-      return [false, error]
-    }
-  },
-  checkRaffleParams: (floatEvents, threshold) => {
-    try {
-      if (floatEvents.length == 0) {
-        throw Hints.EmptyFloatGroup
-      }
-
-      if (!threshold || isNaN(parseInt(threshold))) {
-        throw Hints.InvalidThreshold
-      }
-
-      const _threshold = new Decimal(threshold)
-      if (!(_threshold.isInteger() && _threshold.isPositive() && !_threshold.isZero() && _threshold.toNumber() <= floatEvents.length)) {
-        throw Hints.InvalidThreshold
-      }
-
-      return [true, Hints.Valid]
-    } catch (error) {
-      return [false, error]
-    }
-  }
-}
-
 const dropModes = [
+  EligibilityModeFLOAT,
   EligibilityModeWhitelist,
   EligibilityModeWhitelistWitAmount,
 ]
 
 const raffleModes = [
+  EligibilityModeFLOAT,
   EligibilityModeWhitelist 
 ]
 

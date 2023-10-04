@@ -35,8 +35,8 @@ import CreatedModal from '../common/CreatedModal'
 import publicConfig from '../../publicConfig'
 import StatsCard from './StatsCard'
 
-const NamePlaceholder = "Campanha de Marketing - 1"
-const DescriptionPlaceholder = ""
+const NamePlaceholder = "DROP NAME"
+const DescriptionPlaceholder = "Detailed information about this DROP"
 const HostPlaceholder = "0x0042"
 const TokenPlaceholder = { symbol: "FLOW" }
 const AmountPlaceholder = new Decimal(42)
@@ -160,14 +160,6 @@ export default function DropCreator(props) {
   }
 
   const checkEligibilityParams = () => {
-    if (eligibilityMode.key === EligibilityModeFLOATGroup.key) {
-      return EligibilityModeFLOATGroup.checkParams(
-        floatEvents, threshold,
-        packetMode, tokenBalance, capacity,
-        { identicalAmount: identicalAmount, totalAmount: totalAmount }
-      )
-    }
-
     if (eligibilityMode.key === EligibilityModeFLOAT.key) {
       return EligibilityModeFLOAT.checkParams(
         floatEvents, threshold,
@@ -237,10 +229,7 @@ export default function DropCreator(props) {
       withFloats: false,
       threshold: null,
       eventIDs: [],
-      eventHosts: [],
-      withFloatGroup: false,
-      floatGroupName: null,
-      floatGroupHost: null
+      eventHosts: []
     }
 
     if (eligibilityMode.key === EligibilityModeWhitelistWitAmount.key) {
@@ -265,11 +254,6 @@ export default function DropCreator(props) {
       params.eventIDs = eventIDs
       params.eventHosts = eventHosts
 
-    } else if (eligibilityMode.key === EligibilityModeFLOATGroup.key) {
-      params.withFloatGroup = true
-      params.threshold = threshold
-      params.floatGroupName = floatGroup.groupName
-      params.floatGroupHost = floatGroup.groupHost
     }
 
     if (packetMode && packetMode.key === PacketModeIdentical.key) {
@@ -323,7 +307,7 @@ export default function DropCreator(props) {
       )
     }
 
-    if (mode.key === EligibilityModeFLOAT.key || mode.key === EligibilityModeFLOATGroup.key) {
+    if (mode.key === EligibilityModeFLOAT.key) {
       return (
         <FloatReviewer
           floatMode={mode.detail}
@@ -345,10 +329,10 @@ export default function DropCreator(props) {
       {/** title */}
       {showPreview ?
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          PRÉVIA
+          PREVIEW
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          CRIAR
+          CREATE DROP
         </h1>
       }
 
@@ -408,7 +392,7 @@ export default function DropCreator(props) {
 
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-            Modalidade<span className="text-red-600">*</span>
+            Eligibility<span className="text-red-600">*</span>
           </label>
           <EligibilityModeSelector mode={eligibilityMode} setMode={setEligibilityMode} setPacketMode={setPacketMode} />
         </div>
@@ -439,7 +423,7 @@ export default function DropCreator(props) {
               setShowPreview(false)
             }}
           >
-            VOLTAR
+            BACK
           </button> : null
         }
         <button
@@ -455,8 +439,8 @@ export default function DropCreator(props) {
         >
           {props.user.loggedIn ?
             (eligibilityMode ?
-              (!showPreview ? "VISUALIZAR" : "CRIAR")
-              : "Selecione um modo") : "Conectar carteira"}
+              (!showPreview ? "PREVIEW" : "CREATE")
+              : "Select a mode") : "Connect Wallet"}
         </button>
       </div>
       <CreatedModal open={showCreatedModal} setOpen={setShowCreatedModal} url={newDropURL} />

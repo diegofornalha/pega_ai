@@ -30,8 +30,8 @@ import { createRaffle } from '../../lib/mist-transactions'
 import RaffleStatsCard from './RaffleStatsCard'
 import RewardCard from './RewardCard'
 
-const NamePlaceholder = "Nome do Sorteio"
-const DescriptionPlaceholder = "Informações detalhadas sobre este SORTEIO"
+const NamePlaceholder = "RAFFLE NAME"
+const DescriptionPlaceholder = "Detailed information about this RAFFLE"
 const HostPlaceholder = "0x0042"
 const CreatedAtPlaceholder = new Date('2020-08-01T08:16:16Z')
 const Timezone = getTimezone()
@@ -162,12 +162,6 @@ export default function RaffleCreator(props) {
   }
 
   const checkEligibilityParams = () => {
-    if (eligibilityMode.key === EligibilityModeFLOATGroup.key) {
-      return EligibilityModeFLOATGroup.checkRaffleParams(
-        floatEvents, threshold
-      )
-    }
-
     if (eligibilityMode.key === EligibilityModeFLOAT.key) {
       return EligibilityModeFLOAT.checkRaffleParams(
         floatEvents, threshold
@@ -236,10 +230,7 @@ export default function RaffleCreator(props) {
       withFloats: false,
       threshold: null,
       eventIDs: [],
-      eventHosts: [],
-      withFloatGroup: false,
-      floatGroupName: null,
-      floatGroupHost: null
+      eventHosts: []
     }
 
     if (eligibilityMode.key === EligibilityModeWhitelist.key) {
@@ -256,12 +247,6 @@ export default function RaffleCreator(props) {
       params.threshold = `${eventIDs.length}`
       params.eventIDs = eventIDs
       params.eventHosts = eventHosts
-
-    } else if (eligibilityMode.key === EligibilityModeFLOATGroup.key) {
-      params.withFloatGroup = true
-      params.threshold = threshold
-      params.floatGroupName = floatGroup.groupName
-      params.floatGroupHost = floatGroup.groupHost
     }
 
     const args = Object.values(params)
@@ -293,7 +278,7 @@ export default function RaffleCreator(props) {
       )
     }
 
-    if (mode.key === EligibilityModeFLOAT.key || mode.key === EligibilityModeFLOATGroup.key) {
+    if (mode.key === EligibilityModeFLOAT.key) {
       return (
         <FloatReviewer
           floatMode={mode.detail}
@@ -315,10 +300,10 @@ export default function RaffleCreator(props) {
       {/** title */}
       {showPreview ?
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          PREVIA DO SORTEIO DE NFT 
+          PREVIEW
         </h1> :
         <h1 className="font-flow font-semibold text-2xl sm:text-4xl text-center mb-10">
-          EM MANUTENÇÃO
+          CREATE NFT RAFFLE
         </h1>
       }
 
@@ -374,10 +359,10 @@ export default function RaffleCreator(props) {
 
         <div className="flex flex-col">
           <label className="text-2xl font-bold font-flow">
-          Nº de vencedores<span className="text-red-600">*</span>
+            # of Winners<span className="text-red-600">*</span>
           </label>
           <label className="block text-md font-flow leading-6 mt-2 mb-2">
-          O número máximo de vencedores a serem sorteados
+            The max number of winners to be drawn
           </label>
           <input
             type="number"
@@ -394,10 +379,11 @@ export default function RaffleCreator(props) {
 
         <div className="flex flex-col">
           <label className="text-2xl font-bold font-flow">
-          Prazo de inscrição{timezone ? ` (${timezone})` : ''}<span className="text-red-600">*</span>
+            Registration Deadline{timezone ? ` (${timezone})` : ''}<span className="text-red-600">*</span>
           </label>
           <label className="block text-md font-flow leading-6 mt-2 mb-2">
-          Para ser candidato, as contas elegíveis devem se registrar antes desta data          </label>
+            To be a candidate, eligible accounts should register before this date
+          </label>
           <input
             type="datetime-local"
             disabled={transactionInProgress}
@@ -409,7 +395,7 @@ export default function RaffleCreator(props) {
 
         <div className="flex flex-col gap-y-2">
           <label className="block text-2xl font-bold font-flow">
-          Elegibilidade de registro<span className="text-red-600">*</span>
+            Registration Eligibility<span className="text-red-600">*</span>
           </label>
           <EligibilityModeSelector type="RAFFLE" mode={eligibilityMode} setMode={setEligibilityMode} />
         </div>
@@ -455,8 +441,8 @@ export default function RaffleCreator(props) {
         >
           {props.user.loggedIn ?
             (eligibilityMode ?
-              (!showPreview ? "VISUALIZAR" : "CRIAR")
-              : "Selecione um modo") : "Conectar carteira"}
+              (!showPreview ? "PREVIEW" : "CREATE")
+              : "Select a mode") : "Connect Wallet"}
         </button>
       </div>
       <CreatedModal type="Raffle" open={showCreatedModal} setOpen={setShowCreatedModal} url={newRaffleURL} />

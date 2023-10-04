@@ -16,7 +16,7 @@ const getCriteriaLabel = (drizzle, type) => {
   if (verifier.type === "Whitelist") {
     return (
       <label className="w-full font-flow font-medium text-sm break-words">
-        {`Na lista deste ${type}`}
+        {`On the whitelist of this ${type}`}
       </label>
     )
   }
@@ -64,24 +64,7 @@ const getCriteriaLabelPreview = (
     eligibilityMode.key === EligibilityModeWhitelist.key) {
     return (
       <label className="w-full font-flow font-medium text-sm break-words">
-        {`Na lista deste ${type}`}
-      </label>
-    )
-  }
-
-  if (eligibilityMode.key === EligibilityModeFLOATGroup.key) {
-    return (
-      <label className="w-full font-flow font-medium text-sm break-words">
-        Own <span className="font-bold text-drizzle-green">{threshold} </span>
-        FLOAT(s) in Group&nbsp;<span className="font-bold">
-          <a
-            href={`${publicConfig.floatURL}/${floatGroup.groupHost}/group/${floatGroup.groupName}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-drizzle-green">
-            {floatGroup.groupName}
-          </a>
-        </span>&nbsp;<span className="font-bold">MINTED BEFORE</span> <span className="font-bold text-drizzle-green">{new Date().toLocaleString()}</span>
+        {`On the whitelist of this ${type}`}
       </label>
     )
   }
@@ -115,7 +98,7 @@ export default function CriteriaCard(props) {
     ring-1 ring-black ring-opacity-5 rounded-3xl overflow-hidden
     sm:max-w-[240px]">
       <div className={`flex flex-col gap-y-2 ring-2 ring-drizzle-green rounded-2xl p-3 `}>
-        <label className="text-center font-flow font-semibold">QUEM É ELEGÍVEL?</label>
+        <label className="text-center font-flow font-semibold">WHO IS ELIGIBLE?</label>
         {drizzle ?  getCriteriaLabel(drizzle, type)
         : getCriteriaLabelPreview(eligibilityMode, floatGroup, floatEventPairs, threshold, type)
         }
