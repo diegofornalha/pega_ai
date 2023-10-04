@@ -35,8 +35,8 @@ import CreatedModal from '../common/CreatedModal'
 import publicConfig from '../../publicConfig'
 import StatsCard from './StatsCard'
 
-const NamePlaceholder = "DROP NAME"
-const DescriptionPlaceholder = "Detailed information about this DROP"
+const NamePlaceholder = "Campanha de Marketing"
+const DescriptionPlaceholder = ""
 const HostPlaceholder = "0x0042"
 const TokenPlaceholder = { symbol: "FLOW" }
 const AmountPlaceholder = new Decimal(42)

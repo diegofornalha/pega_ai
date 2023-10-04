@@ -7,7 +7,7 @@ import {
 import TimeLimitPicker from './TimeLimitPicker'
 import ImageSelector from './ImageSelector'
 
-const URLPlaceholder = "https://the.link.you.want.to.add"
+const URLPlaceholder = "https://flowpix.com.br"
 
 const BasicInfoMemoizeBanner = React.memo(({ banner }) => {
   return (

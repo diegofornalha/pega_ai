@@ -26,11 +26,10 @@ export default function WhitelistWithAmountInput(props) {
     <>
       <div>
         <label className="block text-2xl font-bold font-flow">
-          Addresses & Amounts
+        Endereços e valores
         </label>
         <label className="block font-flow text-md leading-6 mt-2 mb-2">
-          For each line, enter one address and the token amount, seperate with comma. Duplicate addresses are not allowed.
-        </label>
+        Para cada linha, insira um endereço e o valor do token, separados por vírgula. Endereços duplicados não são permitidos.        </label>
         <div className="mt-1">
           <textarea
             rows={8}

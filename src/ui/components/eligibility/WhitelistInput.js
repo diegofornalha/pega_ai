@@ -24,10 +24,10 @@ export default function WhitelistInput(props) {
     <>
       <div>
         <label className="block text-2xl font-bold font-flow">
-          Addresses
+          Endereço
         </label>
         <label className="block font-flow text-md leading-6 mt-2 mb-2">
-          For each line, enter one address. Duplicate addresses are not allowed.
+        Para cada linha, insira um endereço. Endereços duplicados não são permitidos.
         </label>
         <div className="mt-1">
           <textarea
@@ -39,7 +39,7 @@ export default function WhitelistInput(props) {
             spellCheck={false}
             value={rawRecordsStr}
             placeholder={
-              "0xf8d6e0586b0a20c7"
+              "0x7bf07d719dcb8480"
             }
             onChange={(event) => {
               if (validRecords.length > 0 || invalidRecords.length > 0) {

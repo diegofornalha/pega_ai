@@ -40,7 +40,7 @@ export default function AlertModal() {
                 <label className="block w-full h-[80px] text-center text-[60px]">❗️</label>
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                      Attention Needed
+                    Atenção
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">

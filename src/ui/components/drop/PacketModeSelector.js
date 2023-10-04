@@ -20,8 +20,8 @@ export const checkPacketMode = (packetMode, tokenBalance, capacity, amount = {})
 const UINT32_MAX = 4294967295
 export const PacketModeRandom = {
   key: "Random",
-  name: 'Random Amount',
-  intro: 'Distribute random amount of tokens to eligible account',
+  name: 'Sorte',
+  intro: 'Distribua uma quantidade aleatória de moedas',
   checkParams: (capacity, totalAmount, tokenBalance) => {
     if (!capacity || isNaN(parseInt(capacity))) throw Hints.InvalidCapacity
     if (!totalAmount || isNaN(parseFloat(totalAmount))) throw Hints.InvalidTotalAmount
@@ -46,8 +46,8 @@ export const PacketModeRandom = {
 
 export const PacketModeIdentical = {
   key: "Identical",
-  name: 'Identical Amount',
-  intro: 'Distribute identical amount of tokens to eligible account',
+  name: 'Fixa',
+  intro: 'Distribua quantidades idênticas de tokens para contas qualificadas',
   checkParams: (capacity, identicalAmount, tokenBalance) => {
     if (!capacity || isNaN(parseInt(capacity))) throw Hints.InvalidCapacity
     if (!identicalAmount || isNaN(parseFloat(identicalAmount))) throw Hints.InvalidIdenticalAmount

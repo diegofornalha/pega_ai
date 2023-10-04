@@ -7,10 +7,10 @@ import { useEffect } from 'react'
 
 export const EligibilityModeWhitelistWitAmount = {
   key: "WhitelistWithAmount",
-  name: 'Whitelist with Amount',
+  name: 'Distribuição Flexível',
   intro: (type) => {
     if (type === "DROP") {
-      return 'Distribute specific amount to specific account on whitelist'
+      return 'Distribuir quantia específica para conta específica na lista de permissões'
     }
 
     if (type === "RAFFLE") {
@@ -44,10 +44,10 @@ export const EligibilityModeWhitelistWitAmount = {
 
 export const EligibilityModeWhitelist = {
   key: "Whitelist",
-  name: 'Whitelist',
+  name: 'Lista de Ganhadores',
   intro: (type) => {
     if (type === "DROP") {
-      return 'Distribute tokens to holders of specific FLOAT. FCFS'
+      return 'Distribua tokens para contas específicas da sua lista'
     }
 
     if (type === "RAFFLE") {
