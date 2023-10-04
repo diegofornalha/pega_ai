@@ -14,7 +14,7 @@ function classNames(...classes) {
 }
 
 export default function TokenSelector(props) {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("brasil (BR)")
   const [selectedToken, setSelectedToken] = useState()
   const [balance, setBalance] = useState(new Decimal(0))
   const [tokens, setTokens] = useState([]);
@@ -32,6 +32,12 @@ export default function TokenSelector(props) {
         return token
       })
       setTokens(tokenList)
+
+      // Verifique se o token "Brasil (BR)" está na lista e defina-o como selecionado
+      const brToken = tokenList.find(token => token.symbol === "BR" && token.name === "brasil");
+      if (brToken) {
+        setSelectedToken(brToken);
+      }
     })
   }, [setTokens])
 
@@ -61,14 +67,15 @@ export default function TokenSelector(props) {
         props.onTokenSelected(token)
       }
     }}>
-      <Combobox.Label className="block text-2xl font-flow font-bold">Token<span className="text-red-600">*</span></Combobox.Label>
+      <Combobox.Label className="block text-2xl font-flow font-bold">Moeda<span className="text-red-600">*</span></Combobox.Label>
       {props.user && props.user.loggedIn ? (selectedToken
         ? <Combobox.Label className="block text-md font-flow leading-6 mt-2 mb-2">Seu saldo é {balance.toString()} {selectedToken.symbol}</Combobox.Label>
-        : <Combobox.Label className="block text-md font-flow leading-6 mt-2 mb-2">Selecione o token para adicionar ao DROP</Combobox.Label>
+        : <Combobox.Label className="block text-md font-flow leading-6 mt-2 mb-2">Selecione a moeda que deseja distribuir</Combobox.Label>
       ) : <Combobox.Label className="block text-md font-flow leading-6 mt-2 mb-2">Conecte a carteira para selecionar o token</Combobox.Label>
       }
       <div className="relative mt-1">
         <Combobox.Input
+          defaultValue="brasil (BR)" // Valor inicial definido para "Brasil (BR)"
           className="w-full h-[50px] text-lg font-flow rounded-2xl border border-drizzle-green bg-drizzle-green-ultralight py-2 pl-3 pr-10  focus:border-drizzle-green-dark focus:outline-none focus:ring-1 focus:ring-drizzle-green-dark"
           onChange={(event) => {
             setQuery(event.target.value)
