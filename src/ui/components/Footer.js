@@ -86,7 +86,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="font-flow text-sm whitespace-pre"
         >
-          Made by <span className="underline font-bold decoration-drizzle-green decoration-2">33Labs</span> with ❤️
+          Inspiração <span className="underline font-bold decoration-drizzle-green decoration-2">33Labs</span>
         </a>
         <a
           href="https://discord.com/invite/hT8EpC5mUN"
@@ -94,7 +94,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="font-flow text-sm whitespace-pre"
         >
-           Get support on <span className="underline font-bold decoration-drizzle-green decoration-2">Emerald City DAO</span>
+          <span className="underline font-bold decoration-drizzle-green decoration-2">Emerald City DAO</span>
         </a>
       </div>
 
