@@ -25,7 +25,7 @@ export default function DropList(props) {
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-2xl font-bold text-gray-900">
-            {isCurrentUser ? `Minhas Campanhas  de Distribuição(${drops.length})` : `Distribuições (${drops.length})`}
+            {isCurrentUser ? `My DROPs (${drops.length})` : `DROPs (${drops.length})`}
           </h1>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
@@ -47,7 +47,7 @@ export default function DropList(props) {
                   router.push("/create/ft_drop")
                 }}
               >
-                CRIAR NOVA DISTRIBUIÇÃO DE TOKEN
+                New DROP
               </button> : null
           }
         </div>
@@ -87,39 +87,39 @@ export default function DropList(props) {
                       drop.status = status
                       return drop
                     }).map((drop) => (
-                      <Link key={`${drop.dropID}-link`} href={`${drop.host}/drops/${drop.dropID}`}>
-                        <tr key={drop.dropID}>
-                          <td className="py-4 px-3 text-sm">
-                            <div className="flex items-center">
-                              <div className="h-10 w-24 flex-shrink-0 relative">
-                                <Image className="rounded-lg" src={drop.image ?? "/banner.png"} alt="" layout="fill" objectFit="contain" />
-                              </div>
-                              <div className="ml-4">
-                                <label className="block font-medium text-gray-900 break-words max-w-[300px] min-w-[60px]">{drop.name}</label>
-                              </div>
+                      <tr key={drop.dropID} onClick={() => {
+                        router.push(`${drop.host}/drops/${drop.dropID}`)
+                      }}>
+                        <td className="py-4 px-3 text-sm">
+                          <div className="flex items-center">
+                            {/* <div className="h-10 w-24 flex-shrink-0 relative"> */}
+                            {/* <Image className="rounded-lg" src={drop.image ?? "/banner.png"} alt="" layout="fill" objectFit="contain" /> */}
+                            {/* </div> */}
+                            <div className="ml-4">
+                              <label className="block font-medium text-gray-900 break-words max-w-[300px] min-w-[60px]">{drop.name}</label>
                             </div>
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            <div className="text-gray-500">
-                              {drop.tokenInfo.symbol}
-                            </div>
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {getVerifierType(drop, "DROP")}
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {getDistributorType(drop)}
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            <label className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${drop.status.tagColor}`}>
-                              {drop.status.title}
-                            </label>
-                          </td>
-                          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                            {convertCadenceDateTime(drop.createdAt).toLocaleString()}
-                          </td>
-                        </tr>
-                      </Link>
+                          </div>
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          <div className="text-gray-500">
+                            {drop.tokenInfo.symbol}
+                          </div>
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {getVerifierType(drop, "DROP")}
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {getDistributorType(drop)}
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          <label className={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${drop.status.tagColor}`}>
+                            {drop.status.title}
+                          </label>
+                        </td>
+                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                          {convertCadenceDateTime(drop.createdAt).toLocaleString()}
+                        </td>
+                      </tr>
                     ))}
                   </tbody>
                 </table>
@@ -161,7 +161,7 @@ export default function DropList(props) {
         </div> :
         <div className="flex mb-10 justify-center">
           <label className="leading-[200px] font-flow font-medium text-base text-gray-500">
-            {isCurrentUser ? "Nada criado ainda" : "Esta conta ainda não criou distribuições de tokens"}
+            {isCurrentUser ? "You haven't created DROP yet" : "This account haven't created DROP yet"}
           </label>
         </div>}
     </div>

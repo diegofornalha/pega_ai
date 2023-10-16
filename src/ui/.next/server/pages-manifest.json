@@ -1,8 +1,16 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
-  "/": "pages/index.js",
-  "/[account]": "pages/[account].js"
+  "/404": "pages/404.html",
+  "/500": "pages/500.html",
+  "/[account]/drops/[dropID]": "pages/[account]/drops/[dropID].html",
+  "/[account]": "pages/[account].html",
+  "/[account]/raffles/[raffleID]": "pages/[account]/raffles/[raffleID].html",
+  "/api/hello": "pages/api/hello.js",
+  "/create/compra_pix": "pages/create/compra_pix.html",
+  "/create/nft_raffle": "pages/create/nft_raffle.html",
+  "/create/ft_drop": "pages/create/ft_drop.html",
+  "/": "pages/index.html",
+  "/lista": "pages/lista.html",
+  "/_document": "pages/_document.js"
 }
